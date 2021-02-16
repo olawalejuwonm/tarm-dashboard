@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const App = () = {
   return(
   <Router>
-  <Switch>
-    <Route path="/">
+    <Switch>
+      <Route path="/">
 
-      <Layout />
-    </Route>
+        <Layout />
+      </Route>
 
   </Switch>
     </Router >

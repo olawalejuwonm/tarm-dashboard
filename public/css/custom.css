@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#sidenav {
+    height: 100vh;
+    width: 17vw !important;
+    background: linear-gradient(106.54deg, rgba(0, 0, 0, 0.8)0.51%, rgba(0, 0, 0, 0.8)100%), url('../sidebar-2.jpg')no-repeat center center/cover;
+   
+
+    height: 100vh;
+}
+
+.sidenav-adjust .container-fluid {
+    
+   width: 17vw !important;
+}
+
+
+
+#sidenav .btn {
+    display: block !important;
+}
+
+
+
+#sidenav .btn-custom {
+    color: #fff !important;
+    font-weight: lighter !important;
+    text-transform: capitalize;
+    display: block !important;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    
+}
+
+
+
+
+
+.active {
+    background: #007BFF !important;
+    width: 100% !important;
+    border-radius: 3px;
+    justify-content: center !important;
+    display: flex;
+    color: #fff !important;
+    text-transform: capitalize;
+    font-weight: lighter !important;
+    text-decoration: none;
+    outline: none !important;
+
+}
+
+#sidenav img {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.user-name {
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    border-bottom: 1px solid #777;
+
+}
+
+.close {
+    text-decoration: none;
+    font-size: 28px;
+    position: absolute;
+    right: 14px;
+    opacity: 1;
+    color: #050505;
+}
+
+#content {
+    width: 83vw;
+    background: #eeeeee;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+#content ul {
+    list-style: none;
+
+}
+
+#content ul li a {
+    padding: 0 0.75rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #333;
+}
+
+#content ul li a {
+    background:#007BFF ;
+    color: #fff;
+    padding: 0.7rem;
+    margin: 0 0.5rem;
+    transition: all .5s ease-in-out;
+   
+}
+
+#content ul li a:hover {
+    background:#070113;
+}
+
+#content img {
+    image-rendering: 60px;
+    height: 60px;
+}
+

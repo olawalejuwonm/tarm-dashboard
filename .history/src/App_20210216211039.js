@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () = {
-  return(
-  <Router>
-  <Switch>
-    <Route path="/">
+  return (
+    <Router>
+    <Switch>
+    <Route  path="/">
 
-      <Layout />
+      <Layout/>
     </Route>
 
-  </Switch>
-    </Router >
+    </Switch>
+    </Router>
   );
 }
 
