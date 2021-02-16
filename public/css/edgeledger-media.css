@@ -1,0 +1,116 @@
+@media(max-width: 500px){
+    #navbar {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    
+    }
+
+    #navbar ul li a:hover {
+        background: none;
+        border-radius: 0px;
+       
+}
+
+    .nav-logo {
+        padding-bottom: 1rem;
+    }
+
+    .showcase-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 2rem;
+        position: absolute;
+        top: 103px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    .showcase-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .showcase-content p {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 600px;
+        padding: 2rem 0;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .what-content  {
+        display: block;
+    }
+
+    .what-services {
+        margin: 1rem 0;
+
+    }
+    .what-services p, .what-content h5 {
+        padding: 0 2rem;
+    }
+
+    .what-content h5 {
+        padding-bottom: 1rem;
+    }
+
+    .what i {
+        margin-left: 1rem;
+    }
+
+    
+
+    .who-img  {
+        display: none;
+    }
+    .who-text {
+        height: 480px;
+        width: 100%;
+        
+    }
+
+    #clients img {
+        
+        width: 50px;
+        height: 50px;
+        margin: 0.5rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    #footer p{
+        font-size: 14px;
+    }
+
+}
+@media(max-width: 768px){
+    .what-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .what {
+        margin: 1rem 0;
+    }
+
+    .who-img, .who-text {
+        height: 480px;
+    }
+
+    #clients img {
+        width: 70px;
+        height: 70px;
+    }
+}
+

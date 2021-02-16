@@ -1,0 +1,18 @@
+#clients {
+    background: linear-gradient(106.61deg, rgba(109, 161, 204, 0.851) 0.51%, #4f60af 100%), url('../img/pexels-pixabay-41949.jpg')no-repeat center center/cover;
+
+}
+#desc {
+    background: linear-gradient(106.61deg, rgb(58, 143, 192) 0.51%, #2e7299 100%), url('../img/home1.jpg')no-repeat center center/cover;
+}
+
+.card-remove{
+    border: none !important;
+    padding-left: 0;
+}
+
+.footer{
+        background: linear-gradient(106.61deg, rgba(32, 32, 32, 0.851) 0.51%, #1b1b1b 100%), url('../img/pexels-pixabay-41949.jpg')no-repeat center center/cover;
+        
+
+}

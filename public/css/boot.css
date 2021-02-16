@@ -1,0 +1,13 @@
+.py-6{
+    padding: 7rem 0rem;
+}
+.jumbotron{
+    background: #fff!important;
+}
+.container .animated{
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+.hover:hover{
+    box-shadow: 1px 1px 1px 1px #ccc ;
+}

@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grid{
+    display: grid;
+    /* grid-template-columns: 200px 400px 600px 300px 600px; */
+    /* grid-gap: 1rem; */
+    
+    /* grid-template-columns: repeat(3, 3fr); */
+    /* grid-template-columns: 600px auto 400px; */
+    /* grid-template-columns: repeat(4, 1fr) */
+    /* grid-template-rows: 1fr 2fr 3fr; */
+    /* grid-auto-rows: 2fr; */
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: (repeat(auto-fix), minmax(300px, 1fr)); */
+
+}
+
+.item{
+    
+
+
+    padding: 3rem;
+    border: 1px solid #ccc;
+    background: #2d3d4d;
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    text-align: center;
+}
+main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1rem;
+}
+
+.item:first-child{
+    background: url('../img/nao-robot-wallpaper.jpg')no-repeat center center/cover;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+}
+/* .item:nth-child(14){
+    background: url('../img/robot-wallpaper-4.jpg')no-repeat center center/cover;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+} */
