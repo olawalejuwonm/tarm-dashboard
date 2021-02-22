@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserProfile = (  ) => {
+const UserProfile = () => {
     return(
         <>
             <div className="container">

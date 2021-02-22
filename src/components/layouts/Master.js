@@ -1,15 +1,23 @@
 import React from 'react';
-import Content from '../partials/Content';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Content from '../partials/TopNav';
 import Sidenav from '../partials/Sidenav';
+import HomeLayout from './HomeFolder/HomeLayout';
+import ProfileLayout from './ProfileFolder/ProfileLayout';
 
 
 const Master = () => {
+
     return(
         <>
-        <div className="d-flex">
+        <div className="d-fl">
 
-            <Sidenav/>
-            <Content/>
+          
+      <Route path="/" component={HomeLayout} exact />
+      <Route path="/profile" component={ProfileLayout} exact />
+
+    
+
         </div>
         </>
     )

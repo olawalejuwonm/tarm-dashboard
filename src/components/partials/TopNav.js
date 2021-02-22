@@ -3,7 +3,7 @@ import ContentBox from './ContentBox';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
-const Content = () => {
+const TopNav = () => {
     const ContentData = [{
         linkURL: "/",
         title: 'Home'
@@ -20,9 +20,10 @@ const Content = () => {
         linkURL: "/contact",
         title: 'Contact'
     }]
+    
     return (
         <>
-            <div id="content" className="d-flex">
+            <div id="content" className="">
                 <ul className="d-flex my-4 mr-auto">
                     {ContentData.length > 0 ?
                         ContentData.map((contents) =>
@@ -34,4 +35,4 @@ const Content = () => {
     )
 }
 
-export default Content;
+export default TopNav;
