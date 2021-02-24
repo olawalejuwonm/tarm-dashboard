@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import Sidenav from '../../partials/Sidenav'
 import TopNav from '../../partials/TopNav'
-import Profile from './Profile'
+import Blog from './Blog'
 
-export default class ProfileLayout extends Component {
+export default class BlogLayout extends Component {
     render() {
         return (
             <div id="LayoutBackground" className="d-flex">
                 <Sidenav/>
                 {/* <TopNav/> */}
-                <Profile/>
+                <Blog/>
               
             </div>
         )

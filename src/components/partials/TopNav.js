@@ -30,6 +30,7 @@ const TopNav = () => {
                             <ContentBox linkURL={contents.linkURL}
                                 title={contents.title} />) : <><div className="bg-warning d-flex justify-content-center display-4">no feed to dispaly</div></>}
                 </ul>
+            
             </div>
         </>
     )

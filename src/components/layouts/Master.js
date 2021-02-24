@@ -4,6 +4,7 @@ import Content from '../partials/TopNav';
 import Sidenav from '../partials/Sidenav';
 import HomeLayout from './HomeFolder/HomeLayout';
 import ProfileLayout from './ProfileFolder/ProfileLayout';
+import BlogLayout from './BlogFolder/BlogLayout';
 
 
 const Master = () => {
@@ -15,6 +16,8 @@ const Master = () => {
           
       <Route path="/" component={HomeLayout} exact />
       <Route path="/profile" component={ProfileLayout} exact />
+      <Route path="/blog" component={BlogLayout} exact />
+
 
     
 

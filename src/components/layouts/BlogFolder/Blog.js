@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import ContentBox from "../../partials/ContentBox";
-import ProfileHomeSection from "./ProfileHomeSection";
-import ProfileUpdate from "./ProfileUpdate";
+import AllPost from "./AllPost";
+import CreatePost from "./CreatePost";
 
-export default class Profile extends Component {
+export default class Blog extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showContent: true,
+      showContent: true
     };
   }
 
@@ -64,7 +64,7 @@ export default class Profile extends Component {
               onClick={this.changeContentHandlerUpdate}
             >
               {" "}
-              My Profile
+              Create Post
             </div>
             <div
               id="proheads"
@@ -72,12 +72,12 @@ export default class Profile extends Component {
               onClick={this.changeContentHandlerHome}
             >
               {" "}
-              Update Profile
+              All Post
             </div>
           </div>
         </div>
 <div id="cont" className="shadow-sm rounded-4"> 
-        {this.state.showContent ? <ProfileHomeSection /> : <ProfileUpdate />}
+        {this.state.showContent ? <CreatePost/> : <AllPost/>}
         </div>
       </div>
     );

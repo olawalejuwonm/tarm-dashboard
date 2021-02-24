@@ -1,18 +1,18 @@
-import React from 'react'
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import React, { Component } from 'react'
 
-export default function ProfileUpdate() {
-    return (
-        <div className="container p-5">
+export default class CreatePost extends Component {
+    render() {
+        return (
+            <div>
+                  <div className="container p-5">
   
   <form action="/">
     <div className="form-group">
-      <label htmlFor="fname">First Name:</label>
+      <label htmlFor="fname">Post Title:</label>
       <input type="text" className="form-control" id="email" />
     </div>
-    <div className="form-group">
-      <label htmlFor="Lname">Last Name:</label>
-      <input type="text" className="form-control" id="email" />
-    </div>
+    <CKEditor/>
     <div className="form-group">
       <label htmlFor="email">Email address:</label>
       <input type="email" className="form-control" id="email" />
@@ -29,6 +29,7 @@ export default function ProfileUpdate() {
     <button type="submit" className="btn btn-default">Submit</button>
   </form>
 </div>
-
-    )
+            </div>
+        )
+    }
 }
