@@ -5,6 +5,9 @@ import Sidenav from '../partials/Sidenav';
 import HomeLayout from './HomeFolder/HomeLayout';
 import ProfileLayout from './ProfileFolder/ProfileLayout';
 import BlogLayout from './BlogFolder/BlogLayout';
+import EventLayout from './EventsFolder/EventLayout';
+import ProjectLayout from './ProjectFolder/ProjectLayout';
+
 
 
 const Master = () => {
@@ -17,6 +20,9 @@ const Master = () => {
       <Route path="/" component={HomeLayout} exact />
       <Route path="/profile" component={ProfileLayout} exact />
       <Route path="/blog" component={BlogLayout} exact />
+      <Route path="/events" component={EventLayout} exact />
+      <Route path="/projects" component={ProjectLayout} exact />
+
 
 
     

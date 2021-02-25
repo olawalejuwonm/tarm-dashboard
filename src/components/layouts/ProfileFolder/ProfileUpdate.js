@@ -26,7 +26,7 @@ export default function ProfileUpdate() {
       <input type="file" className="form-control" id="email" />
     </div>
    
-    <button type="submit" className="btn btn-default">Submit</button>
+    <button type="submit" className="btn btn-primary mt-4 col-12">Submit</button>   
   </form>
 </div>
 
