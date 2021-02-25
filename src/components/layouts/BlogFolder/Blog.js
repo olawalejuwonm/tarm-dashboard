@@ -40,44 +40,44 @@ export default class Blog extends Component {
     ];
 
     return (
-      <div  id="content">
+      <div id="content">
         <div>
-          <ul className="d-flex my-4 mr-auto">
+          <ul className="d-flex my-4">
             {ContentData.length > 0 ? (
               ContentData.map((contents) => (
                 <ContentBox linkURL={contents.linkURL} title={contents.title} />
               ))
             ) : (
-              <>
-                <div className="bg-warning d-flex justify-content-center display-4">
-                  no feed to display
+                <>
+                  <div className="bg-warning d-flex justify-content-center display-4">
+                    no feed to display
                 </div>
-              </>
-            )}
+                </>
+              )}
           </ul>
         </div>
-        <div className="container " id="profile">
-          <div className="row col-12">
-            <div
+        <div className="container blog-profile w-75 " id="profile">
+          <div className="d-flex justify-content-center">
+            <button
               id="proheads"
-              className="col-md-4 bg-primary text-center  rounded-2 text-white py-2 shadow"
+              className="col-md-4 w-100 bg-primary text-center blog-post  rounded-2 text-white py-1 "
               onClick={this.changeContentHandlerUpdate}
             >
               {" "}
               Create Post
-            </div>
-            <div
+            </button>
+            <button
               id="proheads"
-              className="col-md-4 bg-primary text-center rounded-2 text-white py-2  shadow"
+              className="col-md-4 bg-primary text-center w-100 blog-post rounded-2 text-white py-1  "
               onClick={this.changeContentHandlerHome}
             >
               {" "}
               All Post
-            </div>
+            </button>
           </div>
         </div>
-<div id="cont" className="shadow-sm rounded-4"> 
-        {this.state.showContent ? <CreatePost/> : <AllPost/>}
+        <div id="cont" className=" rounded-4">
+          {this.state.showContent ? <CreatePost /> : <AllPost />}
         </div>
       </div>
     );

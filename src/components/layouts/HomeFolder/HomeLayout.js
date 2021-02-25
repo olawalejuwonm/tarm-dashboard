@@ -14,13 +14,13 @@ const HomeLayout = () => {
             <Sidenav/>
             
             <TopNav/>
-            <HomeContent/>
                 
                  
          
             
 
         </div>
+            <HomeContent/>
         </>
     )
 }

@@ -24,7 +24,7 @@ const TopNav = () => {
     return (
         <>
             <div id="content" className="">
-                <ul className="d-flex my-4 mr-auto">
+                <ul className="my-4  mr-auto">
                     {ContentData.length > 0 ?
                         ContentData.map((contents) =>
                             <ContentBox linkURL={contents.linkURL}

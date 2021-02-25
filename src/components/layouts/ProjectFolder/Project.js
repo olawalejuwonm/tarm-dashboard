@@ -40,7 +40,7 @@ export default class Project extends Component {
     ];
 
     return (
-      <div  id="content">
+      <div id="content">
         <div>
           <ul className="d-flex my-4 mr-auto">
             {ContentData.length > 0 ? (
@@ -48,12 +48,12 @@ export default class Project extends Component {
                 <ContentBox linkURL={contents.linkURL} title={contents.title} />
               ))
             ) : (
-              <>
-                <div className="bg-warning d-flex justify-content-center display-4">
-                  no feed to display
+                <>
+                  <div className="bg-warning d-flex justify-content-center display-4">
+                    no feed to display
                 </div>
-              </>
-            )}
+                </>
+              )}
           </ul>
         </div>
         <div className="container " id="profile">
@@ -76,11 +76,11 @@ export default class Project extends Component {
             </div>
           </div>
         </div>
-<div id="cont" className="shadow-sm rounded-4"> 
-        {this.state.showContent ? <CreateProject/> : <AllProjects/>}
+        <div id="cont" className="shadow-sm rounded-4">
+          {this.state.showContent ? <CreateProject /> : <AllProjects />}
         </div>
       </div>
-      
+
     );
   }
 }
