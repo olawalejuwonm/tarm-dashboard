@@ -5,7 +5,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 class Ckeditor extends Component {
     render() {
         return (
-            <div className="">
+            <div className="container-fluid ckeditor ">
                 {/* <h3>Post <sup>*</sup></h3> */}
                 <CKEditor
                     editor={ ClassicEditor }

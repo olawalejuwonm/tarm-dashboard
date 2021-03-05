@@ -13,6 +13,12 @@
     height: 100vh;
 }
 
+.createPost-icon a {
+    border: none !important;
+    outline: none !important;
+    text-align: center !important;
+}
+
 .sidenav-adjust .container-fluid {
     
    width: 17vw !important;
@@ -87,7 +93,7 @@
 }
 
 #content {
-    /* width: 83vw; */
+    width: 83vw;
     /* background: #eeeeee; */
     /* display: flex; */
     height: 10rem;
@@ -99,6 +105,9 @@
 }
 
 #content ul {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
     list-style: none;
 
 }
@@ -128,16 +137,29 @@
     height: 60px;
 }
 #profile{
-    padding-top: 15%;
+    /* padding-top: 15%;
+    margin: 4rem 7rem; */
     font-size: 120%;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     /* padding-left: 0px !important; */
 
+}
+
+.blog-post {
+    border: none !important;
+    outline: none !important;
 }
 
 #profilehead{
 
 
+}
+
+.blog-profile {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -146,20 +168,27 @@
 
     /* background-color: #007BFF; */
     margin-right: 20px;
+    font-size: 21px;
+
 
 
 }
 
 
+
 #LayoutBackground{
     /* background-color: #fbfbfb; */
-    background: linear-gradient(106.54deg, rgba(255, 255, 255, 0.8)10%, rgba(189, 189, 189, 0.8)100%), url('../sidebar-2.jpg')no-repeat center center/cover;
+    background: linear-gradient(106.54deg, rgba(228, 226, 226, 0.8)10%, rgba(211, 208, 208, 0.8)100%);
 
 
 }
 
 #cont{
-    width: 40rem;
+    width: 100%;
+}
+
+.ckeditor {
+    width: 475px !important;
 }
 /* #profilerender{
     margin-right: 10s ease-in-out;
