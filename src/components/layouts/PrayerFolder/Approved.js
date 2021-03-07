@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class AllDownloads extends Component {
+export default class Approved extends Component {
     render() {
         return (
             <div>
-         <div className="p-4 text-center" id="postview"> View All Downloads Here</div>
+         <div className="p-4 text-center" id="postview"> Approved Prayers Here</div>
             </div>
         )
     }

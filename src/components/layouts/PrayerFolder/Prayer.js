@@ -1,25 +1,49 @@
 import React, { Component } from "react";
 import ContentBox from "../../partials/ContentBox";
-import AllDownloads from "./AllPrayers";
-import CreateDownloads from "./Pending";
+import AllPrayers from "./AllPrayers";
+import Approved from "./Approved";
+import Disapproved from "./Disapproved";
+import Pending from "./Pending";
+import Spam from "./Spam";
 
-export default class Downloads extends Component {
+export default class Prayers extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showContent: true
+      showContent: [  {
+        id:1, header:"Pending"
+      },
+      {
+        id:2, header:"All Request"
+      },
+      {
+        id:3, header:"Approved"
+      },
+      {
+        id:4, header:"Disapproved"
+      },
+      {
+        id:5, header:"Spam"
+      }
+    
+    ]
     };
   }
 
-  changeContentHandlerUpdate = () => {
-    this.setState({ showContent: true });
+componentDidMount=()=>{
+  this.changeContentHandlerUpdate = (a) => {
+    let sc = this.state.showContent
+    this.setState({ showContent:a  });
+    console.log(a)
   };
-  changeContentHandlerHome = () => {
-    this.setState({ showContent: false });
-  };
+}
+
+
+
 
   render() {
+    let stc = this.state.showContent 
     const ContentData = [
       {
         linkURL: "/",
@@ -60,24 +84,49 @@ export default class Downloads extends Component {
           <div className="row col-12">
             <div
               id="proheads"
-              className="col-md-4 bg-primary text-center  rounded-2 text-white py-2 shadow"
-              onClick={this.changeContentHandlerUpdate}
+              className="col-md-2 bg-primary text-center  rounded-2 text-white py-2 shadow"
+              onClick={()=>this.changeContentHandlerUpdate(1)}
             >
               {" "}
-              Create Download
+              Pending
             </div>
             <div
               id="proheads"
-              className="col-md-4 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={this.changeContentHandlerHome}
+              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              onClick={()=>this.changeContentHandlerUpdate(2)}
             >
               {" "}
-              List All Download
+              All Request
             </div>
+            <div
+              id="proheads"
+              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              onClick={()=>this.changeContentHandlerUpdate(3)}
+            >
+              {" "}
+              Approved
+            </div>
+            <div
+              id="proheads"
+              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              onClick={()=>this.changeContentHandlerUpdate(4)}
+            >
+              {" "}
+              Disapproved
+            </div>
+            <div
+              id="proheads"
+              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              onClick={()=>this.changeContentHandlerUpdate(5)}
+            >
+              {" "}
+              Spam
+            </div>
+
           </div>
         </div>
         <div id="cont" className="shadow-sm rounded-4">
-          {this.state.showContent ? <CreateDownloads/> : <AllDownloads />}
+          { stc == 1 ? <Pending/> :  stc == 2 ? <AllPrayers/> :stc == 3 ?  <Approved/>:stc == 4 ? <Disapproved/>: stc == 5 ? <Spam/>:''  }
         </div>
       </div>
 

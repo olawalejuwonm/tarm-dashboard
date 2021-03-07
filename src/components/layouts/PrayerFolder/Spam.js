@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class AllDownloads extends Component {
+export default class Spam extends Component {
     render() {
         return (
             <div>

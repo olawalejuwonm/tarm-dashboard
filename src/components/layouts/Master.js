@@ -8,6 +8,7 @@ import BlogLayout from './BlogFolder/BlogLayout';
 import EventLayout from './EventsFolder/EventLayout';
 import ProjectLayout from './ProjectFolder/ProjectLayout';
 import DownloadLayout from './DownloadFolder/DownloadLayout';
+import PrayerLayout from './PrayerFolder/PrayerLayout';
 
 
 
@@ -24,6 +25,8 @@ const Master = () => {
       <Route path="/events" component={EventLayout} exact />
       <Route path="/projects" component={ProjectLayout} exact />
       <Route path="/downloads" component={DownloadLayout} exact />
+      <Route path="/prayers" component={PrayerLayout} exact />
+
 
 
 
