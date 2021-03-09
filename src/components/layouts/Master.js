@@ -7,6 +7,7 @@ import ProfileLayout from './ProfileFolder/ProfileLayout';
 import BlogLayout from './BlogFolder/BlogLayout';
 import EventLayout from './EventsFolder/EventLayout';
 import ProjectLayout from './ProjectFolder/ProjectLayout';
+import DownloadLayout from './DownloadFolder/DownloadLayout';
 
 
 
@@ -22,6 +23,8 @@ const Master = () => {
       <Route path="/blog" component={BlogLayout} exact />
       <Route path="/events" component={EventLayout} exact />
       <Route path="/projects" component={ProjectLayout} exact />
+      <Route path="/downloads" component={DownloadLayout} exact />
+
 
 
 

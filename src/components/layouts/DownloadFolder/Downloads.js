@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ContentBox from "../../partials/ContentBox";
-import AllEvents from "./AllEvents";
-import CreateEvents from "./CreateEvents";
+import AllDownloads from "./AllDownloads";
+import CreateDownloads from "./CreateDownload";
 
-export default class Event extends Component {
+export default class Downloads extends Component {
   constructor(props) {
     super(props);
 
@@ -40,7 +40,7 @@ export default class Event extends Component {
     ];
 
     return (
-      <div  id="content">
+      <div id="content">
         <div>
           <ul className="d-flex my-4 mr-auto">
             {ContentData.length > 0 ? (
@@ -48,23 +48,23 @@ export default class Event extends Component {
                 <ContentBox linkURL={contents.linkURL} title={contents.title} />
               ))
             ) : (
-              <>
-                <div className="bg-warning d-flex justify-content-center display-4">
-                  no feed to display
+                <>
+                  <div className="bg-warning d-flex justify-content-center display-4">
+                    no feed to display
                 </div>
-              </>
-            )}
+                </>
+              )}
           </ul>
         </div>
         <div className="container " id="profile">
-          <div className="row col-12" style={{marginLeft:"20%"}}>
+          <div className="row col-12">
             <div
               id="proheads"
-              className="col-md-4 bg-primary text-center  rounded-2 text-white py-2 shadow " 
+              className="col-md-4 bg-primary text-center  rounded-2 text-white py-2 shadow"
               onClick={this.changeContentHandlerUpdate}
             >
               {" "}
-              Create Event
+              Create Download
             </div>
             <div
               id="proheads"
@@ -72,14 +72,15 @@ export default class Event extends Component {
               onClick={this.changeContentHandlerHome}
             >
               {" "}
-              List All Events
+              List All Download
             </div>
           </div>
         </div>
-<div id="cont" className="shadow-sm rounded-4"> 
-        {this.state.showContent ? <CreateEvents/> : <AllEvents/>}
+        <div id="cont" className="shadow-sm rounded-4">
+          {this.state.showContent ? <CreateDownloads/> : <AllDownloads />}
         </div>
       </div>
+
     );
   }
 }
