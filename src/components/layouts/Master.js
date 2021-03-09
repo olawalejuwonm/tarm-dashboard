@@ -14,7 +14,7 @@ const Master = () => {
 
     return(
         <>
-        <div className="d-fl">
+        <div className="d-flex">
 
           
       <Route path="/" component={HomeLayout} exact />
