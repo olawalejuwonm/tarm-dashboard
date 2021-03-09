@@ -31,7 +31,7 @@ export default class CreatePost extends Component {
                 </div>
 
 
-                <div className="form-group  mt-3">
+                <div className="form-group  mt-3]+">
                   <label htmlFor="email">Separate tags using comma,leaving no space in between,
                     Use same tags for different messages to group them</label>
                 </div>

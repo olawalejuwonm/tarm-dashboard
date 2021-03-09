@@ -58,13 +58,14 @@ const Sidenav = () => {
     const [addActive, changeActive] = useState('.active')
     return (
         <>
-            <div clasName="side-adjust">
+            <div className="side-adjust">
                 <div className="container-fluid sidenav-adjust">
                     <div id="sidenav" className="container-fluid px-3">
                         {/* <Link to="/" className=" py-2" className="close fw-bold text-white">&times;</Link> */}
 
                         <img src={image} alt="username" className="mt-3" />
                         <h5 className="user-name py-3">username</h5>
+
 
                         
 
