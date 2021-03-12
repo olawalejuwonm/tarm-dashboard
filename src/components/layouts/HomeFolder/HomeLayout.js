@@ -13,7 +13,7 @@ const HomeLayout = () => {
             {/* <Layout/> */}
             <Sidenav/>
             
-            <TopNav/>
+            {/* <TopNav/> */}
                 
                  
          

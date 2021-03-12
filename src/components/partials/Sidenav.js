@@ -11,7 +11,9 @@ const Sidenav = () => {
     const LinkData = [
         {
             title: 'blog',
-            LinkUrl: '/blog'
+            LinkUrl: '/blog',
+            // subTitle:'createPost',
+            // subLinkUrl:'/All Post'
         },
         {
             title: 'events',
@@ -74,6 +76,8 @@ const Sidenav = () => {
                                 <Navlayout 
                                     title={link.title}
                                     LinkUrl={link.LinkUrl}
+                                    SubMenutitle={link.subTitle} 
+                                    SubMenulink={link.subLinkUrl}
                                 />
                             ): <><div>include details</div></>
                          }
