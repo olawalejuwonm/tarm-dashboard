@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const ContentBox = ({linkURL, title}) => {
     return(
         <>
-            <div className="">
+            <div className="d-flex justify-content-center align-items-center">
 
             <li><Link to={linkURL ? linkURL : null}>{title ? title : 'No title'}</Link></li>
             </div>
