@@ -1,25 +1,18 @@
 import React from 'react';
 import Layout from '../Layout';
 import HomeContent from './HomeContent';
-import Sidenav from '../../partials/Sidenav';
+// import Sidenav from '../../partials/Sidenav';
 import TopNav from '../../partials/TopNav';
+// import { sidebarData } from '../../partials/sidebarData';
+import Nav from '../../partials/Nav';
 
 
 const HomeLayout = () => {
     return(
         <>
-        <div id="LayoutBackground" className="d-flex" >
-
-            {/* <Layout/> */}
-            <Sidenav/>
-            
-            {/* <TopNav/> */}
-                
-                 
-         
-            
-
-        </div>
+            {/* <Nav/> */}
+        {/* <div id="LayoutBackground" className="" >
+        </div> */}
             <HomeContent/>
         </>
     )

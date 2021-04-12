@@ -6,7 +6,7 @@
 
 
 #sidenav {
-    width: 17vw !important;
+    width: 17vw ;
     background: linear-gradient(106.54deg, rgba(68, 0, 240, 0.8)0.51%, rgba(0, 0, 0, 0.8)100%), url('../sidebar-2.jpg')no-repeat center center/cover;
    
 
@@ -203,4 +203,76 @@
     height: 100px;
     font-size: 25px  ;
     
+}
+
+.navbar {
+    background: #060b26;
+    /* height: 80px; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-top: 0 !important;
+    z-index: 2;
+
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+
+}
+
+.nav-menu {
+    display: flex;
+    background: #060b26;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    transition: 350ms;
+    left: -100%;    
+}
+
+.nav-menu.active {
+    width: 50% !important;
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding:  8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: #f5f5f5 !important;
+    font-size: 16px;
+    width: 60px;
+    width: 95%;
+    padding: 0 16px;
+    border-radius: 4px;
+    
+}
+
+.nav-text a:hover {
+    background-color: #1a83ff;
+}
+
+.nav-menu-items {
+    width: 100%;
+}
+
+.navbar-toggle {
+    background-color: #060b26;
+}
+
+span {
+    margin-left: 0.5rem
 }

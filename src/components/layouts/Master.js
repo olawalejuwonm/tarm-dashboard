@@ -9,6 +9,7 @@ import EventLayout from './EventsFolder/EventLayout';
 import ProjectLayout from './ProjectFolder/ProjectLayout';
 import DownloadLayout from './DownloadFolder/DownloadLayout';
 import PrayerLayout from './PrayerFolder/PrayerLayout';
+import Nav from '../partials/Nav';
 
 
 
@@ -16,6 +17,8 @@ const Master = () => {
 
     return(
         <>
+
+        <Nav/>
         <div className="d-flex">
 
           

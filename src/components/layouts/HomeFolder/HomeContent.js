@@ -1,5 +1,4 @@
 import React from 'react';
-import ContentBox from '../../partials/ContentBox';
 import Donut from './donutChart';
 import Chart1 from './LineChart';
 
@@ -8,83 +7,67 @@ import Chart1 from './LineChart';
 
 
 const HomeContent = () => {
-    const ContentData = [
-        {
-          linkURL: "/",
-          title: "Home",
-        },
-        {
-          linkURL: "/about",
-          title: "About",
-        },
-        {
-          linkURL: "/profile",
-          title: "Profile",
-        },
-        {
-          linkURL: "/contact",
-          title: "Contact",
-        },
-      ];
-  
-    return(
+  const ContentData = [
+    {
+      linkURL: "/",
+      title: "Home",
+    },
+    {
+      linkURL: "/about",
+      title: "About",
+    },
+    {
+      linkURL: "/profile",
+      title: "Profile",
+    },
+    {
+      linkURL: "/contact",
+      title: "Contact",
+    },
+  ];
+
+  return (
+
+    <div id="content" >
+
       
-        <div  id="content" >
+      <div className="container " >
 
-<div>
-          <ul className="d-flex my-4 mr-auto">
-            {ContentData.length > 0 ? (
-              ContentData.map((contents) => (
-                <ContentBox linkURL={contents.linkURL} title={contents.title} />
-              ))
-            ) : (
-              <>
-                <div className="bg-warning d-flex justify-content-center display-4">
-                  no feed to display
-                </div>
-                
-              </>
+        <div className="row" >
+          <div className="col-sm-3 bg-info mr-4 my-2 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
+            <h3> <i className="fa fa-cloud-upload p-4"></i> </h3>
 
-            )}
-          </ul>
+      All Post <span style={{ color: 'red' }} className="m-lg-4"> 50 </span>
+          </div>
+          <div className="col-sm-3 bg-primary my-2 bg-gradient mr-4 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
+            <h3> <i className="fa fa-calendar p-4"></i> </h3>
+
+      All Events <span style={{ color: 'red' }} className="m-lg-4"> 50 </span>
+          </div>
+          <div className="col-sm-3 bg-warning my-2 mr-4 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
+            <h3> <i className="fa fa-credit-card-alt p-4"></i> </h3>
+
+      Sales <span style={{ color: 'yellow' }} className="m-lg-4"> 50 </span>
+          </div>
         </div>
-        <div className="container " >
+      </div>
+      <div className="row">
 
-  <div className="row" >
-    <div className="col-sm-3 bg-info mr-4 my-2 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
-    <h3> <i className="fa fa-cloud-upload p-4"></i> </h3>
-      
-      All Post <span style={{color:'red'}} className="m-lg-4"> 50 </span>
-    </div>
-    <div className="col-sm-3 bg-primary my-2 bg-gradient mr-4 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
-    <h3> <i className="fa fa-calendar p-4"></i> </h3>
-    
-      All Events <span style={{color:'red'}} className="m-lg-4"> 50 </span>
-    </div>
-    <div className="col-sm-3 bg-warning my-2 mr-4 d-flex con1 rounded-3 mx-2 text-white shadow-lg justify-content-center align-items-center">
-    <h3> <i className="fa fa-credit-card-alt p-4"></i> </h3>
-    
-      Sales <span style={{color:'yellow'}} className="m-lg-4"> 50 </span>
-    </div>
-  </div>
-</div>
-<div className="row"> 
-
-<div className="col-sm-4 m-4 my-4"> 
-<Chart1/>
-
-</div>
-
-
-<div className="col-sm-4 m-4 my-4">  <Donut/> </div>
-
-
-</div>
-
+        <div className="col-sm-4 m-4 my-4">
+          <Chart1 />
 
         </div>
-       
-    )
+
+
+        <div className="col-sm-4 m-4 my-4">  <Donut /> </div>
+
+
+      </div>
+
+
+    </div>
+
+  )
 }
 
 export default HomeContent;

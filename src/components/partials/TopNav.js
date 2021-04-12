@@ -23,7 +23,7 @@ const TopNav = () => {
     
     return (
         <>
-            <div id="content" className="">
+            <div id="content">
                 <ul className="my-4  mr-auto">
                     {ContentData.length > 0 ?
                         ContentData.map((contents) =>
