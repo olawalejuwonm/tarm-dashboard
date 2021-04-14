@@ -12,7 +12,7 @@ import Navlayout from './Navlayout';
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/',
+        path: '/login',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text'
     }, 
@@ -23,13 +23,13 @@ export const SidebarData = [
         cName: 'nav-text'
     }, 
     {
-        title: 'Events',
-        path: '/events',
-        icon: <MdIcons.MdEvent/>,
+        title: 'Resources',
+        path: '/resources',
+        icon: <AiIcons.AiFillDatabase/>,
         cName: 'nav-text'
     }, 
     {
-        title: 'Project',
+        title: 'Projects',
         path: '/projects',
         icon: <AiIcons.AiFillProject/>,
         cName: 'nav-text'
@@ -59,8 +59,8 @@ export const SidebarData = [
         cName: 'nav-text'
     }, 
     {
-        title: 'Online-Transaction',
-        path: '/online transactions',
+        title: 'Transaction',
+        path: '/online_transactions',
         icon: <AiIcons.AiOutlineTransaction/>,
         cName: 'nav-text'
     }, 
@@ -78,7 +78,7 @@ export const SidebarData = [
     // }, 
     {
         title: 'Feedback',
-        path: '/feedbacks',
+        path: '/feedback',
         icon: <MdIcons.MdFeedback/>,
         cName: 'nav-text'
     }

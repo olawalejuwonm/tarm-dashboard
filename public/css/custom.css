@@ -93,10 +93,10 @@
 }
 
 #content {
-    width: 83vw;
+    width: 100vw;
     /* background: #eeeeee; */
     /* display: flex; */
-    height: 10rem;
+    height: 0rem;
     
 }
 
@@ -188,7 +188,7 @@
 }
 
 .ckeditor {
-    width: 475px !important;
+    width: 475px ;
 }
 /* #profilerender{
     margin-right: 10s ease-in-out;
@@ -219,8 +219,13 @@
 .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
-    background: none;
+    color: #fff;
 
+}
+
+
+.menu-bars svg {
+    color: #fff !important;
 }
 
 .nav-menu {
@@ -236,7 +241,8 @@
 }
 
 .nav-menu.active {
-    width: 50% !important;
+    width: 20% !important;
+    height: 100%;
     left: 0;
     transition: 350ms;
 }
@@ -266,6 +272,7 @@
 }
 
 .nav-menu-items {
+    padding-left: 0 !important;
     width: 100%;
 }
 
@@ -275,4 +282,76 @@
 
 span {
     margin-left: 0.5rem
+}
+
+.login-form {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    background: #060b26;
+    padding: 2rem;
+}
+
+.login-height {
+    height: 92.5vh;
+    overflow: hidden;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link:hover {
+    background: #777 !important;
+    color:#fff !important;
+}
+
+.input {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.create-form {
+    width: 50%;
+}
+
+.feedback-heading {
+    text-align: center !important;
+    
+}
+
+.ck-editor {
+    z-index: -1 !important;
+}
+
+@media(max-width: 500px) {
+    .nav-menu.active {
+        width: 50% !important;
+    }
+
+    .create-form {
+        width: 100%;
+    }
+
+    .ckeditor {
+        width: 100% !important;
+    }
+
+    #proheads{
+        margin-right: 20px;
+        font-size: 12px;
+        padding: 0.2rem 1.5rem !important;
+        margin-top: 1rem;
+    }
+
+    #postview {
+        font-size: 16px;
+    }
+    
 }

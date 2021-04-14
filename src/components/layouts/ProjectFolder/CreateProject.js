@@ -8,7 +8,7 @@ export default class CreateProject extends Component {
             <div>
                   <div className="container p-5">
   
-  <form action="/">
+  <form action="/" className="create-form m-auto">
     <div className="form-group">
       <label htmlFor="fname">Project Title <sup> *</sup></label>
       <input type="text" className="form-control" id="email" />
@@ -53,7 +53,7 @@ export default class CreateProject extends Component {
 
    
    
-    <button type="submit" className="btn btn-primary mt-4 col-12">Submit</button>
+    <button type="submit" className="btn btn-primary mt-4">Submit</button>
   </form>
 </div>
             </div>

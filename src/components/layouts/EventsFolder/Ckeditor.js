@@ -7,7 +7,7 @@ class Ckeditor extends Component {
         return (
             <div className="">
                 {/* <h3>Post <sup>*</sup></h3> */}
-                <CKEditor
+                <CKEditor style={{zIndex: -1}}
                     editor={ ClassicEditor }
                     data="<p></p>"
                     onReady={ editor => {

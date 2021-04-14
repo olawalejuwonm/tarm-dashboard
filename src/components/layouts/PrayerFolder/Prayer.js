@@ -49,10 +49,11 @@ componentDidMount=()=>{
       <div id="content">
         
         <div className="container " id="profile">
-          <div className="row col-12">
+          <div className="row d-flex">
+          
             <div
               id="proheads"
-              className="col-md-2 bg-primary text-center  rounded-2 text-white py-2 shadow"
+              className="col-md-2 col-2 bg-primary text-center  rounded-2 text-white py-2 shadow"
               onClick={()=>this.changeContentHandlerUpdate(1)}
             >
               {" "}
@@ -60,7 +61,7 @@ componentDidMount=()=>{
             </div>
             <div
               id="proheads"
-              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
               onClick={()=>this.changeContentHandlerUpdate(2)}
             >
               {" "}
@@ -68,7 +69,7 @@ componentDidMount=()=>{
             </div>
             <div
               id="proheads"
-              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
               onClick={()=>this.changeContentHandlerUpdate(3)}
             >
               {" "}
@@ -76,7 +77,7 @@ componentDidMount=()=>{
             </div>
             <div
               id="proheads"
-              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
               onClick={()=>this.changeContentHandlerUpdate(4)}
             >
               {" "}
@@ -84,7 +85,7 @@ componentDidMount=()=>{
             </div>
             <div
               id="proheads"
-              className="col-md-2 bg-primary text-center rounded-2 text-white py-2  shadow"
+              className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
               onClick={()=>this.changeContentHandlerUpdate(5)}
             >
               {" "}

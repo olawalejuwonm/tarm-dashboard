@@ -5,7 +5,7 @@ export default class Pending extends Component {
   render() {
     return (
       <div>
-        <div id="container">Pending Request</div>
+        <div id="container py-5">Pending Request</div>
       </div>
     );
   }
