@@ -8,7 +8,7 @@ export const Loader = () => {
 };
 
 export const Affect = ({ load, cref, effect }) => {
-  console.log(cref);
+//   console.log(cref);
   if (cref) {
     if (load) {
       cref.style.display = "none";

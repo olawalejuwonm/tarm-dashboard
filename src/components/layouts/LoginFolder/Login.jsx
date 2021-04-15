@@ -58,7 +58,7 @@ const Login = () => {
         <form className="login-form">
           <h2 className="text-white text-center mb-5">Login</h2>
           <Affect cref={aref.current} load={login.isLoading} effect={login} />
-          <h3 className="text-success text-center" ref={aref}>Hey</h3>
+          <h3 className="text" ref={aref}>{""}</h3>
           <div className="form-group">
             <label className="label">
               Email<span className="text-danger span">*</span>{' '}
