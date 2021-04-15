@@ -1,16 +1,30 @@
-import React, {useState} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { tryLogin } from '../../../redux/ActionCreators';
+import { api, Loader, wrapPromise } from '../../shared';
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const login = useSelector(state => state.login);
+  // console.log(login)
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const [emailError, setEmailError] = useState({});
   const [passwordError, setPasswordError] = useState({});
 
+
+  // console.log(getMessage)
   const onSubmit = (e) => {
     e.preventDefault();
     const isValid = formValidation();
+    if (isValid) {
+      console.log(email, password)
+      // dispatch(tryLogin())
+    }
+
   };
 
   const formValidation = () => {
@@ -24,8 +38,8 @@ const Login = () => {
       isValid = false;
     }
 
-    if (password.length < 10) {
-      passwordError.passwordShort = 'password too long';
+    if (password.length < 2) {
+      passwordError.passwordShort = 'password too short';
       isValid = false;
     }
 
@@ -33,6 +47,10 @@ const Login = () => {
     setPasswordError(passwordError);
     return isValid;
   };
+
+  const affect = (load) => {
+
+  }
   return (
     <>
       <div className="container-fluid login-height">
@@ -51,8 +69,8 @@ const Login = () => {
                 setEmail(e.target.value);
               }}
             />
-            {Object.keys(emailError).map((key) => {
-              return <div className="text-danger error">{emailError[key]}</div>;
+            {Object.keys(emailError).map((key, i) => {
+              return <div key={i} className="text-danger error">{emailError[key]}</div>;
             })}
           </div>
           <div className="form-group">
@@ -68,13 +86,11 @@ const Login = () => {
                 setPassword(e.target.value);
               }}
             />
-            {Object.keys(passwordError).map((key) => {
-              return <div className="text-danger">{passwordError[key]}</div>;
+            {Object.keys(passwordError).map((key, i) => {
+              return <div key={i} className="text-danger">{passwordError[key]}</div>;
             })}
           </div>
           <div>
-            {/* <input type="submit" value="submit"/> */}
-
             <Link
               to="/blog"
               className="btn btn-light mt-3 px-4 text-dark link fw-bold"
