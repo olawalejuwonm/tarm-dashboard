@@ -19,33 +19,38 @@ export default class Downloads extends Component {
   };
 
   render() {
-    
+
 
     return (
       <div id="content">
-        
-        <div className="container " id="profile">
-          <div className="row col-12">
+
+        <div className="container-fluid blog-profile w-100 " id="profile">
+          <div className="d-flex w-50 justify-content-center">
             <div
               id="proheads"
-              className="col-md-4 bg-primary text-center  rounded-2 text-white py-2 shadow"
-              onClick={this.changeContentHandlerUpdate}
+              className="col-md-4  bg-primary text-center  rounded-2 text-white py-2 shadow"
+              onClick={this.changeContentHandlerUpdate} 
             >
               {" "}
               Create Download
+              
             </div>
-            <div
+            <select
               id="proheads"
-              className="col-md-4 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={this.changeContentHandlerHome}
+              className="col-md-4 form-select bg-primary text-center rounded-2 text-white py-2 w-25 shadow"
+              onClick={this.changeContentHandlerHome} aria-label="Default select example"
             >
               {" "}
-              List All Download
-            </div>
+              Download
+              <option selected className="text-white">Project Type</option>
+              <option value="1">Building</option>
+              <option value="2">Audio</option>
+              <option value="3">Three</option>
+            </select>
           </div>
         </div>
         <div id="cont" className="shadow-sm rounded-4">
-          {this.state.showContent ? <CreateDownloads/> : <AllDownloads />}
+          {this.state.showContent ? <CreateDownloads /> : <AllDownloads />}
         </div>
       </div>
 

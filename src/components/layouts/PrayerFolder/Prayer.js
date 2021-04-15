@@ -3,6 +3,7 @@ import AllPrayers from "./AllPrayers";
 import Approved from "./Approved";
 import Disapproved from "./Disapproved";
 import Pending from "./Pending";
+import Request from "./Request";
 import Spam from "./Spam";
 
 export default class Prayers extends Component {
@@ -95,7 +96,7 @@ componentDidMount=()=>{
           </div>
         </div>
         <div id="cont" className="shadow-sm rounded-4">
-          { stc == 1 ? <Pending/> :  stc == 2 ? <AllPrayers/> :stc == 3 ?  <Approved/>:stc == 4 ? <Disapproved/>: stc == 5 ? <Spam/>:''  }
+          { stc == 1 ? <Pending/>:stc == 2 ? <Request/>  :stc == 3 ?  <Approved/>:stc == 4 ? <Disapproved/>: stc == 5 ? <Spam/>:''  }
         </div>
       </div>
 

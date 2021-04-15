@@ -17,6 +17,7 @@ export default class Blog extends Component {
   changeContentHandlerHome = () => {
     this.setState({ showContent: false });
   };
+  
 
   render() {
     
@@ -45,7 +46,7 @@ export default class Blog extends Component {
           </div>
         </div>
         <div id="cont" className=" rounded-4">
-          {this.state.showContent ? <CreatePost /> : <AllPost />}
+          {this.state.showContent?  <CreatePost />: <AllPost />}
         </div>
       </div>
     );

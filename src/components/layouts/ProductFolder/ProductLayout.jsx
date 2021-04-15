@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
-import Sidenav from '../../partials/Sidenav'
 import TopNav from '../../partials/TopNav'
-import Downloads from './Downloads'
+import Products from './Product'
 
-export default class DownloadLayout extends Component {
+export default class PrayerLayout extends Component {
     render() {
         return (
             <div id="LayoutBackground" className="d-flex">
-                {/* <Sidenav/> */}
                 {/* <TopNav/> */}
-                <Downloads/>
+                <Products/>
               
             </div>
         )

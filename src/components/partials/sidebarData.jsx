@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import image from '../assets/—Pngtree—user vector avatar_4830521.png';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as BiIcons from 'react-icons/bi';
 import * as MdIcons from 'react-icons/md';
+import * as BsIcons from 'react-icons/bs';
 import * as IoIcons from 'react-icons/io';
 
 // import MaterialIcon, { colorPalette } from 'material-icons-react';
@@ -19,49 +21,29 @@ export const SidebarData = [
     {
         title: 'Blog',
         path: '/blog',
-        icon: <FaIcons.FaBlogger/>,
+        icon: <BiIcons.BiCommentEdit/>,
         cName: 'nav-text'
     }, 
     {
         title: 'Resources',
-        path: '/resources',
-        icon: <AiIcons.AiFillDatabase/>,
+        path: '/downloads',
+        icon: <AiIcons.AiOutlinePlaySquare/>,
         cName: 'nav-text'
     }, 
     {
         title: 'Projects',
         path: '/projects',
-        icon: <AiIcons.AiFillProject/>,
+        icon: <BiIcons.BiBuildingHouse/>,
         cName: 'nav-text'
     }, 
-    // {
-    //     title: 'Download',
-    //     path: '/downloads',
-    //     icon: <IoIcons.IoDownloadSharp/>,
-    //     cName: 'nav-text'
-    // }, 
+
+    
+    
+    
     {
-        title: 'Prayer',
-        path: '/prayers',
-        icon: <FaIcons.FaPrayingHands/>,
-        cName: 'nav-text'
-    }, 
-    {
-        title: 'Testimonies',
-        path: '/testimonies',
-        icon: <AiIcons.AiFillHome/>,
-        cName: 'nav-text'
-    }, 
-    {
-        title: 'Products',
-        path: '/products',
-        icon: <FaIcons.FaProductHunt/>,
-        cName: 'nav-text'
-    }, 
-    {
-        title: 'Transaction',
+        title: 'Transactions',
         path: '/online_transactions',
-        icon: <AiIcons.AiOutlineTransaction/>,
+        icon: <BsIcons.BsCreditCard/>,
         cName: 'nav-text'
     }, 
     {
@@ -80,6 +62,18 @@ export const SidebarData = [
         title: 'Feedback',
         path: '/feedback',
         icon: <MdIcons.MdFeedback/>,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Manage Users',
+        path: '/manage_users',
+        icon: <FaIcons.FaUserEdit/>,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Account Settings',
+        path: '/account_settings',
+        icon: <BsIcons.BsGear/>,
         cName: 'nav-text'
     }
     

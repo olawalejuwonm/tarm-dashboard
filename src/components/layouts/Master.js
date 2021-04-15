@@ -17,6 +17,7 @@ import Product from './ProductFolder/Product';
 import Transaction from './TransactionFolder/Transaction';
 import Testimonies from './TestimonyFolder/Testimonies';
 import LiveFeed from './LiveFeedFolder/LiveFeed';
+import Manage from './ManageUserFolder/Manage';
 
 const Master = () => {
   return (
@@ -38,6 +39,8 @@ const Master = () => {
         <Route path="/testimonies" component={Testimonies} exact />
         <Route path="/online_transactions" component={Transaction} exact />
         <Route path="/LiveFeed" component={LiveFeed} exact />
+        <Route path="/manage_users" component={Manage} exact />
+
 
       </div>
     </>

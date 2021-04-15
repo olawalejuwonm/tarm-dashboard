@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import * as RiIcons from 'react-icons/ri';
+import * as FiIcons from 'react-icons/fi';
 
-export default class AllProjects extends Component {
+
+export default class Manage extends Component {
     constructor(props) {
         super(props)
 
@@ -13,27 +16,27 @@ export default class AllProjects extends Component {
     render() {
         return (
             <>
-                <div className="p-5 ">
-                    <div className="container-fluid " id="postview">
-                        <h2 className="text-center py-2">All Resources</h2>
+                <div className="p-5 m-auto">
+                    <div className="container-fluid  " id="postview">
+                        <h2 className="text-center py-2 pb-4">Manage users</h2>
                         <div className="border-res">
 
-                            <div className="w-100 bg-light border border-res  text-center" style={{ fontSize: 20 }}>
+                            <div className="w-100 bg-light border border-res px-4  text-center" style={{ fontSize: 20 }}>
                                 <div className="row">
                                     <div className="col-4 col-md-4">
-                                        <p className="mb-0 text-primary fw-bold">Title</p>
+                                        <p className="mb-0 text-primary fw-bold px-2">Title</p>
                                     </div>
                                     <div className="col-2 col-md-2">
-                                        <p className="mb-0 text-primary fw-bold">Project Type</p>
+                                        <p className="mb-0 text-primary fw-bold">Type</p>
+                                    </div>
+                                    <div className="col-3 col-md-3">
+                                        <p className="mb-0 text-primary fw-bold">Date</p>
                                     </div>
                                     <div className="col-2 col-md-2">
-                                        <p className="mb-0 text-primary fw-bold">Started</p>
+                                        <p className="mb-0 text-primary fw-bold text-danger">Delete</p>
                                     </div>
-                                    <div className="col-2 col-md-2">
-                                        <p className="mb-0 text-primary fw-bold">Finished</p>
-                                    </div>
-                                    <div className="col-2 col-md-2">
-                                        <p className="mb-0 text-primary fw-bold">Location</p>
+                                    <div className="col-1 col-md-1">
+                                        <p className="mb-0 text-primary fw-bold text-warning">Update</p>
                                     </div>
                                 </div>
                             </div>
@@ -42,20 +45,21 @@ export default class AllProjects extends Component {
                                     <div className="row p-2">
                                         <div className="col-4 col-md-4">
                                             <p className="mb-0  allpost">
-                                                Transfiguration Ark Revival Mission Head Quarters
+                                                Ghost has a flexible organisational taxonomy called tags,
+                                                which can be assigned from post settings menu.
                                     </p>
                                         </div>
                                         <div className="col-2 col-md-2">
-                                            <p className="mb-0 text-center allpost">Building</p>
+                                            <p className="mb-0 text-center allpost">Audio</p>
                                         </div>
-                                        <div className="col-2 col-md-2">
+                                        <div className="col-3 col-md-3">
                                             <p className="mb-0 text-center  allpost">{this.state.curTime}</p>
                                         </div>
                                         <div className="col-2 col-md-2">
-                                            <p className="mb-0 text-center allpost">{this.state.curTime}</p>
+                                            <button className="mb-0  text-center text-danger allpost"  style={{border: 'none', background: 'none'}}><RiIcons.RiDeleteBin5Line/></button>
                                         </div>
-                                        <div className="col-2 col-md-2">
-                                            <p className="mb-0 text-center allpost">Aroje</p>
+                                        <div className="col-1 col-md-1">
+                                            <button className="mb-0 text-center allpost text-warning" style={{border: 'none', background: 'none'}}><FiIcons.FiEdit/></button>
                                         </div>
                                     </div>
                                 </div>
