@@ -6,6 +6,7 @@ let istate = {
   error: false,
   loggedIn: false,
   message: null,
+  user: {}
 };
 export const login = createReducer(istate, {
   [tryLogin.fulfilled]: (state, action) => {
@@ -15,7 +16,8 @@ export const login = createReducer(istate, {
       isLoading: false,
       loggedIn: true,
       error: false,
-      message: action.payload,
+      user: action.payload.data.user,
+      message: action.payload.message,
     };
   },
   [tryLogin.rejected]: (state, action) => {

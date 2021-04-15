@@ -12,13 +12,13 @@ const Nav = () => {
 
     const [sidebar, setSidebar] = useState(true);
 
-    const showSidebar = () => setSidebar(!sidebar);
+    // const showSidebar = () => setSidebar(!sidebar);
 
     return (
         <>
-            <div className="navbar">
+            <div className="navbar mr-5 mb-5">
                 <Link to="#" className="menu-bars">
-                    <FaIcons.FaBars  onClick={showSidebar}/>
+                    <FaIcons.FaBars  onClick={() => setSidebar(s => !s)}/>
                 </Link>
             </div>
             <nav className={sidebar? 'nav-menu active': 'nav-menu'}>
@@ -28,7 +28,7 @@ const Nav = () => {
                             <AiIcons.AiOutlineClose/>
                         </Link>
                     </li>
-                    {SidebarData.map((item, index) => {
+                    {/* {SidebarData.map((item, index) => {
                         return(
                             <li key={index} className={item.cName}>
                                 <Link to={item.path}>
@@ -37,7 +37,7 @@ const Nav = () => {
                                 </Link>
                             </li>
                         )
-                    })}
+                    })} */}
                 </ul>
             </nav>
 

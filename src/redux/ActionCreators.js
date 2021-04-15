@@ -14,6 +14,9 @@ export const tryLogin =  createAsyncThunk('login', async (body) => {
     try {
         const response = await api("POST","auth/login", body )
         console.log("response", response)
+        if (response.status == "200") {
+            return response
+        }
         return response.message
     } catch (error) {
         console.log("error", error)
