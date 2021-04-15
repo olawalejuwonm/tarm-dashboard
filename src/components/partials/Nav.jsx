@@ -10,7 +10,7 @@ import { SidebarData } from './sidebarData'
 
 const Nav = () => {
 
-    const [sidebar, setSidebar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
 
     const showSidebar = () => setSidebar(!sidebar);
 

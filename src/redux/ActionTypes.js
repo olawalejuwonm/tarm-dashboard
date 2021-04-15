@@ -1,4 +1,4 @@
-export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
+export const LOADING = "LOADING";
 export const ADD_PRODUCTS = "ADD_PRODUCTS";
 export const PRODUCTS_FAILED = "PRODUCTS_FAILED";
 export const STORES_LOADING = "STORES_LOADING";
