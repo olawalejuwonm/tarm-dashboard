@@ -1,47 +1,139 @@
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import Content from '../partials/TopNav';
-import Sidenav from '../partials/Sidenav';
+import React, { Suspense } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import Content from "../partials/TopNav";
+import Sidenav from "../partials/Sidenav";
 // import HomeLayout from './HomeFolder/HomeLayout';
-import ProfileLayout from './ProfileFolder/ProfileLayout';
-import BlogLayout from './BlogFolder/BlogLayout';
-import EventLayout from './EventsFolder/EventLayout';
-import ProjectLayout from './ProjectFolder/ProjectLayout';
-import DownloadLayout from './DownloadFolder/DownloadLayout';
-import PrayerLayout from './PrayerFolder/PrayerLayout';
-import Nav from '../partials/Nav';
-import Login from './LoginFolder/Login';
-import Forgot from './LoginFolder/Forgot';
-import Feedback from './FeedbackFolder/Feedback';
-import Product from './ProductFolder/Product';
-import Transaction from './TransactionFolder/Transaction';
-import Testimonies from './TestimonyFolder/Testimonies';
-import LiveFeed from './LiveFeedFolder/LiveFeed';
-import Manage from './ManageUserFolder/Manage';
+import ProfileLayout from "./ProfileFolder/ProfileLayout";
+import BlogLayout from "./BlogFolder/BlogLayout";
+import EventLayout from "./EventsFolder/EventLayout";
+import ProjectLayout from "./ProjectFolder/ProjectLayout";
+import DownloadLayout from "./DownloadFolder/DownloadLayout";
+import PrayerLayout from "./PrayerFolder/PrayerLayout";
+import Nav from "../partials/Nav";
+import Login from "./LoginFolder/Login";
+import Forgot from "./LoginFolder/Forgot";
+import Feedback from "./FeedbackFolder/Feedback";
+import Product from "./ProductFolder/Product";
+import Transaction from "./TransactionFolder/Transaction";
+import Testimonies from "./TestimonyFolder/Testimonies";
+import LiveFeed from "./LiveFeedFolder/LiveFeed";
+import ManageUser from './ManageUserFolder/Manage';
+import { useSelector } from "react-redux";
+import { Loader } from "../shared";
 
 const Master = () => {
+  const login = useSelector((state) => state.login);
+  const AuthAdmin = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={(props) =>
+        login.loggedIn ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: props.location },
+            }}
+          />
+        )
+      }
+    />
+  );
+
+  const Renderer = ({ Component }) => {
+    return (
+      <Suspense fallback={<Loader />}>
+        <div>
+          <Nav />
+          <Component />
+        </div>
+      </Suspense>
+    );
+  };
+
   return (
     <>
-      <Nav />
+      <Route path="/login" component={Login} exact />
 
       <div className="d-flex">
         {/* <Route path="/" component={HomeLayout} exact /> */}
-        <Route path="/login" component={Login} exact />
-        <Route path="/forgot_password" component={Forgot} exact />
-        <Route path="/profile" component={ProfileLayout} exact />
-        <Route path="/blog" component={BlogLayout} exact />
-        <Route path="/events" component={EventLayout} exact />
-        <Route path="/projects" component={ProjectLayout} exact />
-        <Route path="/downloads" component={DownloadLayout} exact />
-        <Route path="/prayers" component={PrayerLayout} exact />
-        <Route path="/feedback" component={Feedback} exact />
-        <Route path="/products" component={Product} exact />
-        <Route path="/testimonies" component={Testimonies} exact />
-        <Route path="/online_transactions" component={Transaction} exact />
-        <Route path="/LiveFeed" component={LiveFeed} exact />
-        <Route path="/manage_users" component={Manage} exact />
-
-
+        <AuthAdmin
+          path="/forgot_password"
+          component={() => <Renderer Component={Forgot} />}
+          exact
+        />
+        <AuthAdmin
+          path="/"
+          component={() => <Renderer Component={Forgot} />}
+          exact
+        />
+        <AuthAdmin
+          path="/profile"
+          component={() => <Renderer Component={ProfileLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/blog"
+          component={() => <Renderer Component={BlogLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/events"
+          component={() => <Renderer Component={EventLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/projects"
+          component={() => <Renderer Component={ProjectLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/downloads"
+          component={() => <Renderer Component={DownloadLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/prayers"
+          component={() => <Renderer Component={PrayerLayout} />}
+          exact
+        />
+        <AuthAdmin
+          path="/feedback"
+          component={() => <Renderer Component={Feedback} />}
+          exact
+        />
+        <AuthAdmin
+          path="/products"
+          component={() => <Renderer Component={Product} />}
+          exact
+        />
+        <AuthAdmin
+          path="/testimonies"
+          component={() => <Renderer Component={Testimonies} />}
+          exact
+        />
+        <AuthAdmin
+          path="/online_transactions"
+          component={() => <Renderer Component={Transaction} />}
+          exact
+        />
+        <AuthAdmin
+          path="/LiveFeed"
+          component={() => <Renderer Component={LiveFeed} />}
+          exact
+        />
+        <AuthAdmin
+          path="/manage_users"
+          component={() => <Renderer Component={ManageUser} />}
+          exact
+        />
       </div>
     </>
   );
