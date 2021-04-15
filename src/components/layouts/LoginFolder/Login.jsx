@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { tryLogin } from '../../../redux/ActionCreators';
-import { api, Loader, wrapPromise } from '../../shared';
+import { api, Loader, wrapPromise, Affect } from '../../shared';
 
 const Login = () => {
   const dispatch = useDispatch()
   const login = useSelector(state => state.login);
-  // console.log(login)
+  // const [load, sLoad] = useState(false);
+  const aref = useRef(null)
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +23,7 @@ const Login = () => {
     const isValid = formValidation();
     if (isValid) {
       console.log(email, password)
-      // dispatch(tryLogin())
+      dispatch(tryLogin())
     }
 
   };
@@ -48,14 +49,16 @@ const Login = () => {
     return isValid;
   };
 
-  const affect = (load) => {
 
-  }
+
+  // affect(login.isLoading, aref.current, login)
   return (
     <>
       <div className="container-fluid login-height">
         <form className="login-form">
           <h2 className="text-white text-center mb-5">Login</h2>
+          <Affect cref={aref.current} load={login.isLoading} effect={login} />
+          <h3 className="text" ref={aref}>{""}</h3>
           <div className="form-group">
             <label className="label">
               Email<span className="text-danger span">*</span>{' '}
