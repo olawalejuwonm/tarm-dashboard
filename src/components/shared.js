@@ -1,113 +1,113 @@
-import React from "react";
+import React from 'react';
 
-// export const baseLink = "https://tarmwebapi.herokuapp.com/api/v1";
-export const baseLink = "http://localhost:3003/";
+export const baseLink = 'https://tarmwebapi.herokuapp.com/api/v1/';
+// export const baseLink = "http://localhost:3003/";
 
 export const Loader = () => {
-  return <div className="loader"></div>;
+  return <div className="loader" />;
 };
 
-export const Affect = ({ load, cref, effect }) => {
-//   console.log(cref);
+export const Affect = ({load, cref, effect}) => {
+  //   console.log(cref);
   if (cref) {
     if (load) {
-      cref.style.display = "none";
+      cref.style.display = 'none';
       return <Loader />;
     }
 
     if (!effect.error) {
-      cref.className = "text-success text-center";
+      cref.className = 'text-success text-center';
       cref.innerHTML = effect.message;
     } else {
-      cref.className = "text-danger text-center";
+      cref.className = 'text-danger text-center';
       cref.innerHTML = effect.message;
     }
-    cref.style.display = "";
+    cref.style.display = '';
   }
 
-  return <div style={{ display: "none" }}></div>;
+  return <div style={{display: 'none'}} />;
 };
 
 export const api = (method, path, data) => {
   const dofetch = async () => {
     try {
-      let token = localStorage.getItem("token");
+      let token = localStorage.getItem ('token');
       // console.log(token)
-      const r = await fetch(baseLink + path, {
+      const r = await fetch (baseLink + path, {
         method: method,
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: token,
         },
-        body: data ? JSON.stringify(data) : undefined,
-        credentials: "same-origin",
+        body: data ? JSON.stringify (data) : undefined,
+        credentials: 'same-origin',
       });
       // console.log(r);
-      const result = await r.json();
+      const result = await r.json ();
       if (result.status !== 200) {
         throw result;
       }
       return result;
     } catch (e) {
-      console.log(e);
+      console.log (e);
       throw e;
     }
   };
 
-  return dofetch();
+  return dofetch ();
 };
 
 export const postfile = (path, data) => {
   const dofetch = async () => {
     try {
-      let token = localStorage.getItem("token");
+      let token = localStorage.getItem ('token');
       // console.log(token)
-      const r = await fetch(baseLink + path, {
-        method: "POST",
+      const r = await fetch (baseLink + path, {
+        method: 'POST',
         headers: {
           Authorization: token,
         },
         body: data,
       });
       // console.log(r);
-      const result = await r.json();
+      const result = await r.json ();
       return result;
     } catch (e) {
-      console.log(e);
+      console.log (e);
       throw e;
     }
   };
 
-  return dofetch();
+  return dofetch ();
 };
 
-export function wrapPromise(promise) {
-  let status = "pending";
+export function wrapPromise (promise) {
+  let status = 'pending';
   let response;
 
-  const suspender = promise.then(
-    (res) => {
-      console.log("success", res);
-      status = "success";
+  const suspender = promise.then (
+    res => {
+      console.log ('success', res);
+      status = 'success';
       response = res;
     },
-    (err) => {
-      console.log("err", err.message);
+    err => {
+      console.log ('err', err.message);
 
-      status = "error";
+      status = 'error';
       response = err.message;
     }
   );
   const read = () => {
     switch (status) {
-      case "pending":
+      case 'pending':
         throw suspender;
-      case "error":
+      case 'error':
         return response;
       default:
         return response;
     }
   };
 
-  return { read };
+  return {read};
 }

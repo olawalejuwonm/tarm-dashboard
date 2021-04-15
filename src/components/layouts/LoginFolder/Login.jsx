@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { tryLogin } from '../../../redux/ActionCreators';
 import { api, Loader, wrapPromise, Affect } from '../../shared';
 
@@ -20,11 +21,9 @@ const Login = () => {
   // console.log(getMessage)
   const onSubmit = (e) => {
     e.preventDefault();
-    const isValid = formValidation();
-    if (isValid) {
+    // const isValid = formValidation();
       console.log(email, password)
-      dispatch(tryLogin())
-    }
+      dispatch(tryLogin({email, password}))
 
   };
 
@@ -49,7 +48,11 @@ const Login = () => {
     return isValid;
   };
 
+  console.log(login)
 
+  if (login.loggedIn) {
+    return <Redirect to="/" />
+  }
 
   // affect(login.isLoading, aref.current, login)
   return (

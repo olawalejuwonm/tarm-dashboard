@@ -8,11 +8,12 @@ let istate = {
   message: null,
 };
 export const login = createReducer(istate, {
-  [tryLogin.pending]: (state, action) => {
-    console.log("login/loading", action);
+  [tryLogin.fulfilled]: (state, action) => {
+    console.log("login/fulffiled", action);
     return {
       ...state,
-      isLoading: true,
+      isLoading: false,
+      loggedIn: true,
       error: false,
       message: action.payload,
     };

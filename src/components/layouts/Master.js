@@ -26,6 +26,7 @@ import LiveFeed from "./LiveFeedFolder/LiveFeed";
 import ManageUser from './ManageUserFolder/Manage';
 import { useSelector } from "react-redux";
 import { Loader } from "../shared";
+import HomeLayout from "./HomeFolder/HomeLayout";
 
 const Master = () => {
   const login = useSelector((state) => state.login);
@@ -71,7 +72,7 @@ const Master = () => {
         />
         <AuthAdmin
           path="/"
-          component={() => <Renderer Component={Forgot} />}
+          component={() => <Renderer Component={HomeLayout} />}
           exact
         />
         <AuthAdmin
