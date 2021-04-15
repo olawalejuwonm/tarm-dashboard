@@ -7,6 +7,27 @@ export const Loader = () => {
   return <div className="loader"></div>;
 };
 
+export const Affect = ({ load, cref, effect }) => {
+  console.log(cref);
+  if (cref) {
+    if (load) {
+      cref.style.display = "none";
+      return <Loader />;
+    }
+
+    if (!effect.error) {
+      cref.className = "text-success text-center";
+      cref.innerHTML = effect.message;
+    } else {
+      cref.className = "text-danger text-center";
+      cref.innerHTML = effect.message;
+    }
+    cref.style.display = "";
+  }
+
+  return <div style={{ display: "none" }}></div>;
+};
+
 export const api = (method, path, data) => {
   const dofetch = async () => {
     try {
