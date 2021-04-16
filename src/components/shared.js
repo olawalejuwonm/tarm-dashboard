@@ -54,6 +54,10 @@ export const api = (method, path, data) => {
       });
       // console.log(r);
       const result = await r.json();
+      if (result.status === 422) {
+        let err = new Error(result.data[Object.keys(result.data)[0]])
+        throw err;
+      }
       if (result.status !== 200) {
         throw result;
       }

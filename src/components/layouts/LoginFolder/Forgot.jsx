@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom/cjs/react-router-dom.min';
 import {tryLogin} from '../../../redux/ActionCreators';
 import {Affect, api} from '../../shared';
+import Otp from './SendOtp';
 
 const Forgot = () => {
   const login = useSelector((state) => state.login);
@@ -30,24 +31,20 @@ const Forgot = () => {
       );
       console.log(be)
       // dispatch({type: 'get-otp/fulfilled', payload: be})
-      setState(s => ({...s, load: false, effect: {message: be.message}}))
+      setState(s => ({...s, load: false, effect: {message: be.message}, redirect: true}))
     } catch (error) {
       // dispatch({type: 'get-otp/rejected', payload: error})
       console.log(error)
       setState(s => ({...s, load: false, effect:{ error: true, message: error.message}}))
 
     }
-    // console.log(login)
-
-    // dispatch(
-    //   tryLogin({
-    //     point: 'GET',
-    //     type: "otp",
-    //     url: `auth/get-otp?email=${state.email}&type=password-reset`,
-    //   })
-    // );
+ 
     console.log(state);
   };
+
+  if (state.redirect) {
+    return <Otp message={state.effect.message} email={state.email} />
+  }
   return (
     <>
       <div className="container-fluid login-height">
