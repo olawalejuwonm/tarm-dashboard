@@ -8,7 +8,7 @@ export const Loader = () => {
 };
 
 export const Affect = ({load, cref, effect}) => {
-  console.log(load, effect, cref)
+  console.log(load, effect, cref);
   //   console.log(cref);
   if (load) {
     return <Loader />;
@@ -22,7 +22,6 @@ export const Affect = ({load, cref, effect}) => {
     // }
 
     if (effect) {
-
       if (!effect.error) {
         cref.className = 'text-success text-center';
         cref.innerHTML = effect.message;
@@ -54,8 +53,9 @@ export const api = (method, path, data) => {
       });
       // console.log(r);
       const result = await r.json();
+      console.log("result", result)
       if (result.status === 422) {
-        let err = new Error(result.data[Object.keys(result.data)[0]])
+        let err = new Error( Object.keys(result.data)[0] + result.data[Object.keys(result.data)[0]]);
         throw err;
       }
       if (result.status !== 200) {
