@@ -21,9 +21,13 @@ const Login = () => {
   // console.log(getMessage)
   const onSubmit = (e) => {
     e.preventDefault();
-    // const isValid = formValidation();
-      console.log(email, password)
-      dispatch(tryLogin({email, password}))
+    const isValid = formValidation();
+    if (isValid) {
+      dispatch(tryLogin({body: {email, password}, url: "auth/login", point: "POST"},))
+
+    }
+
+      // console.log(email, password)
 
   };
 
@@ -33,22 +37,16 @@ const Login = () => {
 
     let isValid = true;
 
-    if (email.indexOf('@') === -1) {
+    if (!email.match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)) {
       emailError.emailShort = 'Requires a valid email';
       isValid = false;
     }
 
-    if (password.length < 2) {
-      passwordError.passwordShort = 'password too short';
-      isValid = false;
-    }
 
     setEmailError(emailError);
-    setPasswordError(passwordError);
     return isValid;
   };
 
-  console.log(login)
 
   if (login.loggedIn) {
     return <Redirect to="/" />
@@ -58,10 +56,13 @@ const Login = () => {
   return (
     <>
       <div className="container-fluid login-height">
+
         <form className="login-form">
-          <h2 className="text-white text-center mb-5">Login</h2>
+          <h2 className="text-white text-center mb-1">Login</h2>
+          <div className="text-danger">{emailError.emailShort}</div>
+
+          <h3 className="text" ref={aref} >{""}</h3>
           <Affect cref={aref.current} load={login.isLoading} effect={login} />
-          <h3 className="text" ref={aref}>{""}</h3>
           <div className="form-group">
             <label className="label">
               Email<span className="text-danger span">*</span>{' '}
@@ -71,13 +72,12 @@ const Login = () => {
               type="email"
               placeholder="Enter email"
               value={email}
+              required
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
             />
-            {Object.keys(emailError).map((key, i) => {
-              return <div key={i} className="text-danger error">{emailError[key]}</div>;
-            })}
+            
           </div>
           <div className="form-group">
             <label className="label">
@@ -104,13 +104,14 @@ const Login = () => {
             >
               Login
             </Link>
-          </div>
-          <Link
+            <Link
             to="/forgot_password"
             className="forgot-password d-flex justify-content-end text-white mb-3"
           >
             Forgot Password?
           </Link>
+          </div>
+          
         </form>
       </div>
     </>

@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Master from "./components/layouts/Master";
+import Error from "./components/partials/Error";
 import { Loader } from "./components/shared";
 // import Login from './components/layouts/LoginFolder/Login';
 

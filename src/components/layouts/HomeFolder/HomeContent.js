@@ -54,11 +54,11 @@ const HomeContent = () => {
       <div className="row">
 
         <div className="col-sm-4 m-4 my-4">
-          <Chart1 />
+          {/* <Chart1 /> */}
 
         </div>
 
-        <div className="col-sm-4 m-4 my-4">  <Donut /> </div>
+        {/* <div className="col-sm-4 m-4 my-4">  <Donut /> </div> */}
 
       </div>
 

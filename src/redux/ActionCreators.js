@@ -8,19 +8,33 @@ import { api } from "../components/shared"
 //         payload: l
 //     }
 // }
+// export const userBe =  createAsyncThunk('login', async (req) => {
+//     try {
+//         const response = await api(req.point, req.url, req.body )
+//         // console.log("response", response)
+//         if (response.status == "200") {
+//             localStorage.setItem("token", response.data.token)
+//             return response
+//         }
+//         return response.message
+//     } catch (error) {
+//         // console.log("error", error)
+//         throw error.message
+//     }
+    
+// })
 
-
-export const tryLogin =  createAsyncThunk('login', async (body) => {
+export const tryLogin =  createAsyncThunk('login', async (req) => {
     try {
-        const response = await api("POST","auth/login", body )
-        console.log("response", response)
+        const response = await api(req.point, req.url, req.body )
+        // console.log("response", response)
         if (response.status == "200") {
+            localStorage.setItem("token", response.data.token)
             return response
         }
         return response.message
     } catch (error) {
-        console.log("error", error)
+        // console.log("error", error)
         throw error.message
     }
-    
 })

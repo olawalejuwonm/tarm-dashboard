@@ -22,5 +22,5 @@ export const store = configureStore({
     reducer: {
         login: login
     },
-    [tryLogin.rejected]: login
+    // middleware: applyMiddleware(thunk),
 })

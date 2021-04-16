@@ -1,44 +1,50 @@
-import { createReducer } from "@reduxjs/toolkit";
-import { tryLogin } from "./ActionCreators";
-import * as ActionTypes from "./ActionTypes";
+import {createReducer} from '@reduxjs/toolkit';
+import {tryLogin} from './ActionCreators';
+import * as ActionTypes from './ActionTypes';
 let istate = {
   isLoading: false,
   error: false,
   loggedIn: false,
   message: null,
-  user: {}
+  user: {},
 };
-export const login = createReducer(istate, {
-  [tryLogin.fulfilled]: (state, action) => {
-    console.log("login/fulffiled", action);
-    return {
-      ...state,
-      isLoading: false,
-      loggedIn: true,
-      error: false,
-      user: action.payload.data.user,
-      message: action.payload.message,
-    };
-  },
-  [tryLogin.rejected]: (state, action) => {
-    console.log("login/rejected", action);
-    return {
-      ...state,
-      isLoading: false,
-      error: true,
-      message: action.error.message,
-    };
-  },
-  [tryLogin.pending]: (state, action) => {
-         console.log("login/loading", action)
+
+const isStringPayloadAction = (action) => typeof action.payload === 'string';
+
+export const login = createReducer(
+  istate,
+  {
+    [tryLogin.fulfilled]: (state, action) => {
+      // console.log("login/fulffiled", action);
+      return {
+        ...state,
+        isLoading: false,
+        loggedIn: true,
+        error: false,
+        user: action.payload.data.user,
+        message: action.payload.message,
+      };
+    },
+    [tryLogin.rejected]: (state, action) => {
+      // console.log("login/rejected", action);
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+        message: action.error.message,
+      };
+    },
+    [tryLogin.pending]: (state, action) => {
+       console.log("login/loading", action)
       return {
         ...state,
         isLoading: true,
         error: false,
         message: action.payload,
-      }; 
+      };
+    },
   }
-});
+);
 
 // => {
 //   switch (action.types) {
