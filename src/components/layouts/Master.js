@@ -28,15 +28,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Loader} from '../shared';
 import HomeLayout from './HomeFolder/HomeLayout';
 import {tryLogin} from '../../redux/ActionCreators';
-import Otp from './LoginFolder/SendOtp';
-import Error from '../partials/Error';
 
 const Master = () => {
   const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(tryLogin({url: 'users/profile'}));
+    // dispatch(tryLogin({url: 'users/profile', point:"GET"}));
   }, [dispatch]);
   const AuthAdmin = ({component: Component, ...rest}) => (
     <Route

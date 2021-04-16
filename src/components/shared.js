@@ -8,7 +8,7 @@ export const Loader = () => {
 };
 
 export const Affect = ({load, cref, effect}) => {
-  console.log(load, effect, cref);
+  // console.log(load, effect, cref);
   //   console.log(cref);
   if (load) {
     return <Loader />;
@@ -46,15 +46,16 @@ export const api = (method, path, data) => {
         method: method,
         headers: {
           'Content-Type': 'application/json',
-          Authorization: token,
+          Authorization:"Bearer " + token,
         },
         body: data ? JSON.stringify(data) : undefined,
         credentials: 'same-origin',
       });
       // console.log(r);
       const result = await r.json();
-      console.log("result", result)
+      console.log(result)
       if (result.status === 422) {
+        console.log(result)
         let err = new Error( Object.keys(result.data)[0] + result.data[Object.keys(result.data)[0]]);
         throw err;
       }
