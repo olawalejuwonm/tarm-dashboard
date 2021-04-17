@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
-import { Affect, api } from "../../shared";
+import { Affect, api, postfile } from "../../shared";
 
 export default function CreatePost() {
   const [state, setState] = React.useState({load: false});
@@ -28,7 +28,7 @@ export default function CreatePost() {
 
     try {
       setState(s => ({...s, load: true}))
-      const be = await api("POST","posts", formData );
+      const be = await postfile("posts", formData );
       console.log(be)
       setState(s => ({...s, load: false, effect: {message: be.message}}))
     } catch (error) {
