@@ -1,0 +1,23 @@
+.grid{
+    display: flex;
+}
+.item{
+    font-size: 1.2rem;
+    background: #cccccc;
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid #000;
+    width: 200px;
+}
+.blue{
+    color: #0000ffbb;
+}
+.pink{
+    color: #eb798c;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}

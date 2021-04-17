@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-secondary {
+    background-color: #333;
+}
+
+#navbar {
+
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+#navbar h2 {
+    font-size: 23px;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+ul li a:hover {
+    background: #444;
+    color: #f7c08a;
+}
+
+.active {
+    background: #444;
+    color: #f7c08a;
+}
+
+#showcase {
+    background: url('../image/showcase.jpg')no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+
+#showcase h1 {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.span {
+    color: #f7c08a;
+}
+
+#showcase p {
+    margin: 1.5rem 0;
+    color: #fff;
+}
+
+.btn-1 {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+.btn-1:hover {
+    background: #f7c08a;
+    color: #333;
+}
+
+#history {
+    display: flex;
+}
+
+.measurement {
+    width: 50%;
+    height: 350px;
+}
+
+.history-background {
+    background: url('/image/photo-1.jpg');
+}
+
+.history-content {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.history-content h2 {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.history-content p {
+    color: #fff;
+    margin: 2rem 0;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.btn-2 {
+    text-decoration: none;
+    color: #333;
+    background:#fff;
+    padding: 0.8rem 1rem;
+    text-transform: capitalize;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+.btn-2:hover {
+    background: #f7c08a;
+    border-radius:5px;
+    color: #fff;
+}
+
+#services {
+    display: flex;
+}
+
+.measure {
+    padding: 2rem 1.5rem;
+    width: 33.3%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.measure p {
+    text-align: center;
+    margin: 1.5rem 0;
+    line-height: 2.4em;
+}
+
+.meals {
+    background: #f7c08a;
+}
+
+.measure h3 {
+    text-transform: capitalize;
+}
+
+#footer {
+    text-align: center;
+    padding: 1rem;
+}
+#footer p {
+    color: #fff;
+}
+.bg-tertiary {
+    background: #444;
+}

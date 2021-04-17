@@ -1,0 +1,70 @@
+*{
+    /* css reset */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    /* background-color: coral; */
+    width: 500px;
+    height: 200px;
+}
+
+.doe {
+    /* color: #991050; */
+    /* color: rgba(189, 88, 88, 0.609); */
+    color: #ff55dd;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.text {
+    font-style: italic;
+    color: white;
+}
+
+.link {
+    margin: 3rem 0rem;
+    
+}
+
+#box-1 {
+    background-color: blanchedalmond;
+    /*border-width: 2px;
+    border-color: #ff4400;
+    border-style: solid;
+    */
+    border: 3px solid #ff55dd;
+    border-radius: 10px;
+    
+}
+
+#box-2 {
+    background: #333333;
+    color: #fff;
+    border-top: 5px solid blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#box-3 {
+    /* background: url('../image/IMG_20191210_103736_0.jpg')no-repeat center center/cover; */
+    /* color: #fff; */
+    /* height: 900px; */
+    /* width: 600px; */
+    /* background-repeat: no-repeat;
+    background-position: center center ;
+    background-attachment: fixed;
+     */
+}
+
+#box-4 {
+    background-color: #f4f4f4;
+    width: 300px;
+    border: 3px solid red;
+    padding: 10px 20px;
+    margin: 10px 20px;
+
+    
+}
+
