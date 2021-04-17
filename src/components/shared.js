@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-export const baseLink = 'https://tarmwebapi.herokuapp.com/api/v1/';
+export const baseLink = "https://tarmwebapi.herokuapp.com/api/v1/";
 // export const baseLink = "http://localhost:3003/";
 
 export const Loader = () => {
   return <div className="loader" />;
 };
 
-export const Affect = ({load, cref, effect}) => {
+export const Affect = ({ load, cref, effect }) => {
   // console.log(load, effect, cref);
   //   console.log(cref);
   if (load) {
@@ -23,42 +23,42 @@ export const Affect = ({load, cref, effect}) => {
 
     if (effect) {
       if (!effect.error) {
-        cref.className = 'text-success text-center';
+        cref.className = "text-success text-center";
         cref.innerHTML = effect.message;
       } else {
-        cref.className = 'text-danger text-center';
+        cref.className = "text-danger text-center";
         cref.innerHTML = effect.message;
       }
     } else {
-      cref.style.display = '';
+      cref.style.display = "";
     }
   }
 
-  return <div style={{display: 'none'}} />;
+  return <div style={{ display: "none" }} />;
 };
 
 export const api = (method, path, data) => {
-  let token = localStorage.getItem('token');
+  let token = localStorage.getItem("token");
 
-  console.log(data)
+  console.log(data);
   let options = {
     method: method,
     headers: {
-      'Content-Type': 'application/json',
-      Authorization:"Bearer " + token,
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
     },
-    credentials: 'same-origin',
-  }
+    credentials: "same-origin",
+  };
   if (data) {
     options = {
       method: method,
       headers: {
-        'Content-Type': 'application/json',
-        Authorization:"Bearer " + token,
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(data),
-      credentials: 'same-origin',
-    }
+      credentials: "same-origin",
+    };
   }
   const dofetch = async () => {
     try {
@@ -66,10 +66,12 @@ export const api = (method, path, data) => {
       const r = await fetch(baseLink + path, options);
       // console.log(r);
       const result = await r.json();
-      console.log(result)
+      console.log(result);
       if (result.status === 422) {
-        console.log(result)
-        let err = new Error( Object.keys(result.data)[0] + result.data[Object.keys(result.data)[0]]);
+        console.log(result);
+        let err = new Error(
+          "There's an error in one of the field" + Object.keys(result.data)[0].toUpperCase() +" \n  "  + result.data[Object.keys(result.data)[0]]
+        );
         throw err;
       }
       if (result.status !== 200) {
@@ -88,10 +90,10 @@ export const api = (method, path, data) => {
 export const postfile = (path, data) => {
   const dofetch = async () => {
     try {
-      let token = localStorage.getItem('token');
+      let token = localStorage.getItem("token");
       // console.log(token)
       const r = await fetch(baseLink + path, {
-        method: 'POST',
+        method: "POST",
         headers: {
           Authorization: token,
         },
@@ -110,32 +112,32 @@ export const postfile = (path, data) => {
 };
 
 export function wrapPromise(promise) {
-  let status = 'pending';
+  let status = "pending";
   let response;
 
   const suspender = promise.then(
     (res) => {
-      console.log('success', res);
-      status = 'success';
+      console.log("success", res);
+      status = "success";
       response = res;
     },
     (err) => {
-      console.log('err', err.message);
+      console.log("err", err.message);
 
-      status = 'error';
+      status = "error";
       response = err.message;
     }
   );
   const read = () => {
     switch (status) {
-      case 'pending':
+      case "pending":
         throw suspender;
-      case 'error':
+      case "error":
         return response;
       default:
         return response;
     }
   };
 
-  return {read};
+  return { read };
 }

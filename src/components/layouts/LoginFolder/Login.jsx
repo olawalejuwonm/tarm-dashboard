@@ -50,8 +50,9 @@ const Login = () => {
 
 
   // console.log(location)
+  let from = location.state
   if (login.loggedIn) {
-    return <Redirect to={location.state.from.pathname} />
+    return <Redirect to={from ? from.from.pathname: "/"} />
   }
 
   // affect(login.isLoading, aref.current, login)

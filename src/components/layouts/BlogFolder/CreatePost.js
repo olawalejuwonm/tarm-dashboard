@@ -1,53 +1,132 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { CKEditor } from '@ckeditor/ckeditor5-react'
-import Ckeditor from './Ckeditor'
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
-import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
+import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
+import { Affect, api } from "../../shared";
 
-export default class CreatePost extends Component {
-  render() {
-    return (
-      <div>
-        <div className="container p-5 create-blog-alignment">
-          <div className="row d-flex justify-content-between">
-            <div class="col-10 col-md-5 mx-1">
+export default function CreatePost() {
+  const [state, setState] = React.useState({load: false});
+  const aref = React.useRef(null)
 
-              <form className="w-100 d-flex justify-content-center flex-column m-auto" action="/">
-                <div className="form-group blog-form">
-                  <label htmlFor="fname">Post Title </label>
-                  <input type="text" className="form-control" id="email" />
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(state.body)
+    const { title, text, tags, image } = state.body;
 
-                </div>
-                <div className="form-group mt-2 blog-form">
-                  <label htmlFor="email">Post </label>
+    const formData = new FormData();
 
-                  <Ckeditor />
-                </div>
+    formData.append("title", title);
+    formData.append("text", text);
+    formData.append("tags", tags);
 
-                <div className="form-group mt-2">
-                  <label htmlFor="email">Tags:</label>
-                  <input type="Text" className="form-control" id="email" placeholder="e.g builder, reality_conference_2019, ministers_only" />
-                </div>
+    for (var x = 0; x < image.length; x++) {
+      formData.append("image", image[x]);
+    }
 
+    for (var key of formData.entries()) {
+      console.log(key[0] + ", " + key[1]);
+    }
 
-                <div className="form-group  mt-3">
-                  <label htmlFor="email">Separate tags using comma, leaving no space in between,
-                    Use same tags for different messages to group them</label>
-                </div>
+    try {
+      setState(s => ({...s, load: true}))
+      const be = await api("POST","posts", formData );
+      console.log(be)
+      setState(s => ({...s, load: false, effect: {message: be.message}}))
+    } catch (error) {
+      console.error(error)
+      setState(s => ({...s, load: false, effect: {error: true, message: error.message}}))
 
-                <button type="submit" className="btn btn-primary mt-4 w-100">Submit</button>
-              </form>
+    }
+  };
+
+  return (
+    <div>
+      <div className="container p-5 create-blog-alignment">
+        <div className="row d-flex justify-content-between">
+          <div className="col-10 col-md-5 mx-1">
+            <form className="w-100 d-flex justify-content-center flex-column m-auto"
+            onSubmit={handleSubmit}>
+              <div ref={aref}></div>
+              <Affect cref={aref.current} load={state.load} effect={state.effect} />
+              <div className="form-group blog-form">
+                <label htmlFor="fname">Post Title </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="text"
+                  onChange={(e) =>{
+                    setState((s) => ({ ...s, body: { title: e.target.value } }))}
+                  }
+                />
+              </div>
+              <div className="form-group mt-2 blog-form">
+                <label htmlFor="email">Post </label>
+                <div className="container-fluid ckeditor ">
+                  {/* <h3>Post <sup>*</sup></h3> */}
+                  <textarea
+                    onChange={(e) =>
+                      setState((s) => ({
+                        ...s,
+                        body: {...state.body, text: e.target.value },
+                      }))
+                    }
+                  ></textarea>
+                </div>{" "}
+              </div>
+
+              <div className="form-group mt-2">
+                <label htmlFor="email">Tags:</label>
+                <input
+                  type="Text"
+                  className="form-control"
+                  id="email"
+                  onChange={(e) => {
+                    // console.log(e.target.value.split(','))
+                    setState((s) => ({
+                      ...s,
+                      body: {...state.body, tags: e.target.value.split(",") },
+                    }));
+                  }}
+                  placeholder="e.g builder, reality_conference_2019, ministers_only"
+                />
+              </div>
+
+              <div className="form-group  mt-3">
+                <label htmlFor="email">
+                  Separate tags using comma, leaving no space in between, Use
+                  same tags for different messages to group them
+                </label>
+              </div>
+              <div className="btn text-dark d-block">
+              <CloudDownloadIcon
+                style={{ color: "secondary", fontSize: 170 }}
+              ></CloudDownloadIcon>
             </div>
-            <div className="col-10 col-md-5 mx-1 createPost-icon">
-            <Link to="/" className="btn text-dark d-block"><CloudDownloadIcon style={{ color: "secondary", fontSize: 170 }}></CloudDownloadIcon></Link>
-            <Link to="/" className="btn text-white  btn-primary w-100  text-center rounded-0">Add feature image </Link>
+              <input
+              type="file"
+              required
+              onChange={(e) =>
+                setState((s) => ({
+                  ...s,
+                  body: {...state.body, image: e.target.files },
+                }))
+              }
+              className="btn text-white  btn-primary w-100  text-center rounded-0"
+            ></input>
 
-            </div>
+              <button
+                type="submit"
+                className="btn btn-primary mt-4 w-100"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div className="col-10 col-md-5 mx-1 createPost-icon">
+            
+            
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  );
 }
-

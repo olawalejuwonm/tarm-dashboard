@@ -23,6 +23,19 @@ import {api} from '../components/shared';
 //     }
 
 // })
+export const apiPost = createAsyncThunk('post', async (req) => {
+  try {
+    const response = await api(req.point, req.url, req.body);
+    console.log("response", response)
+    if (response.status === 200) {
+      return response;
+    }
+    return response.message;
+  } catch (error) {
+    console.log("error", error)
+    throw error.message;
+  }
+});
 
 export const fetchFeedback = createAsyncThunk('feedback', async (req) => {
   try {
@@ -38,9 +51,8 @@ export const fetchFeedback = createAsyncThunk('feedback', async (req) => {
 export const tryLogin = createAsyncThunk('login', async (req) => {
   try {
     const response = await api(req.point, req.url, req.body);
-    // console.log("response", response)
-    if (response.status == '200') {
-      localStorage.setItem('token', response.data.token);
+    console.log("response", response)
+    if (response.status === 200) {
       return response;
     }
     return response.message;
