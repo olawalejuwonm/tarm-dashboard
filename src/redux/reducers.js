@@ -1,5 +1,5 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {tryLogin} from './ActionCreators';
+import {fetchFeedback, tryLogin} from './ActionCreators';
 import * as ActionTypes from './ActionTypes';
 let istate = {
   isLoading: false,
@@ -8,19 +8,19 @@ let istate = {
 };
 
 export const feedback = createReducer({...istate, feedbacks: {}}, {
-  [tryLogin.fulfilled]: (state, action) => {
-    // console.log("login/fulffiled", action);
+  [fetchFeedback.fulfilled]: (state, action) => {
+    console.log("login/fulffiled", action);
     return {
       ...state,
       isLoading: false,
       loggedIn: true,
       error: false,
-      user: action.payload.data.user,
-      message: action.payload.message,
+      // user: action.payload.data.user,
+      // message: action.payload.message,
     };
   },
-  [tryLogin.rejected]: (state, action) => {
-    // console.log("login/rejected", action);
+  [fetchFeedback.rejected]: (state, action) => {
+    console.log("login/rejected", action);
     return {
       ...state,
       isLoading: false,
@@ -28,8 +28,8 @@ export const feedback = createReducer({...istate, feedbacks: {}}, {
       message: action.error.message,
     };
   },
-  [tryLogin.pending]: (state, action) => {
-    //  console.log("login/loading", action)
+  [fetchFeedback.pending]: (state, action) => {
+     console.log("login/loading", action)
     return {
       ...state,
       isLoading: true,

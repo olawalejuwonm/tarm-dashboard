@@ -1,5 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
+import { useDispatch } from 'react-redux';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { fetchFeedback } from '../../../redux/ActionCreators';
 import Prayers from '../PrayerFolder/Prayer';
 import Testimonies from '../TestimonyFolder/Testimonies';
 
@@ -11,6 +13,12 @@ export default function Feedback() {
   const changeContentHandlerHome = () => {
     setState({showContent: false});
   };
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchFeedback({point: "GET", url: "feedback"}))
+  }, [dispatch])
 
   return (
     <>

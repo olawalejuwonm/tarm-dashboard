@@ -27,10 +27,10 @@ import {api} from '../components/shared';
 export const fetchFeedback = createAsyncThunk('feedback', async (req) => {
   try {
     const response = await api(req.point, req.url, req.body);
-    // console.log("response", response)
+    console.log("response", response)
     return response.message;
   } catch (error) {
-    // console.log("error", error)
+    console.log("error", error)
     throw error.message;
   }
 });

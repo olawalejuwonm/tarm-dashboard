@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import { tryLogin } from '../../../redux/ActionCreators';
-import { api, Loader, wrapPromise, Affect } from '../../shared';
+import { Affect } from '../../shared';
 
 const Login = () => {
-  const dispatch = useDispatch()
+  const location = useLocation();
+  const dispatch = useDispatch();
   const login = useSelector(state => state.login);
   // const [load, sLoad] = useState(false);
   const aref = useRef(null)
@@ -48,8 +49,9 @@ const Login = () => {
   };
 
 
+  // console.log(location)
   if (login.loggedIn) {
-    return <Redirect to="/" />
+    return <Redirect to={location.state.from.pathname} />
   }
 
   // affect(login.isLoading, aref.current, login)

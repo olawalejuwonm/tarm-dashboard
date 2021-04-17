@@ -1,7 +1,7 @@
 import {  applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { persistStore, persistCombineReducers } from "redux-persist";
-import { login } from "./reducers";
+import { feedback, login } from "./reducers";
 import { configureStore } from "@reduxjs/toolkit";
 import { tryLogin } from "./ActionCreators";
 
@@ -20,7 +20,8 @@ import { tryLogin } from "./ActionCreators";
 
 export const store = configureStore({
     reducer: {
-        login: login
+        login: login,
+        feedback: feedback
     },
     // middleware: applyMiddleware(thunk),
 })

@@ -34,7 +34,7 @@ const Master = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(tryLogin({url: 'users/profile', point:"GET"}));
+    dispatch(tryLogin({url: 'users/profile', point:"GET"}));
   }, [dispatch]);
   const AuthAdmin = ({component: Component, ...rest}) => (
     <Route

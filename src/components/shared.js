@@ -38,19 +38,32 @@ export const Affect = ({load, cref, effect}) => {
 };
 
 export const api = (method, path, data) => {
+  let token = localStorage.getItem('token');
+
+  console.log(data)
+  let options = {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization:"Bearer " + token,
+    },
+    credentials: 'same-origin',
+  }
+  if (data) {
+    options = {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:"Bearer " + token,
+      },
+      body: JSON.stringify(data),
+      credentials: 'same-origin',
+    }
+  }
   const dofetch = async () => {
     try {
-      let token = localStorage.getItem('token');
       // console.log(token)
-      const r = await fetch(baseLink + path, {
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization:"Bearer " + token,
-        },
-        body: data ? JSON.stringify(data) : undefined,
-        credentials: 'same-origin',
-      });
+      const r = await fetch(baseLink + path, options);
       // console.log(r);
       const result = await r.json();
       console.log(result)

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import AllPrayers from "./AllPrayers";
 import Approved from "./Approved";
 import Disapproved from "./Disapproved";
@@ -6,44 +6,41 @@ import Pending from "./Pending";
 import Request from "./Request";
 import Spam from "./Spam";
 
-export default class Prayers extends Component {
-  constructor(props) {
-    super(props);
+export default function Prayers () {
 
-    this.state = {
-      showContent: [  {
-        id:1, header:"Pending"
-      },
-      {
-        id:2, header:"All Request"
-      },
-      {
-        id:3, header:"Approved"
-      },
-      {
-        id:4, header:"Disapproved"
-      },
-      {
-        id:5, header:"Spam"
-      }
-    
-    ]
-    };
-  }
+  const [state, setState] = React.useState({
+    showContent: [  {
+      id:1, header:"Pending"
+    },
+    {
+      id:2, header:"All Request"
+    },
+    {
+      id:3, header:"Approved"
+    },
+    {
+      id:4, header:"Disapproved"
+    },
+    {
+      id:5, header:"Spam"
+    }
+  
+  ]
+  })
 
-componentDidMount=()=>{
-  this.changeContentHandlerUpdate = (a) => {
-    let sc = this.state.showContent
-    this.setState({ showContent:a  });
+  useEffect(() => {
+
+  })
+
+  const changeContentHandlerUpdate = (a) => {
+    let sc = state.showContent
+    setState({ showContent:a  });
     console.log(a)
   };
-}
 
 
 
-
-  render() {
-    let stc = this.state.showContent 
+    let stc = state.showContent 
     
 
     return (
@@ -55,7 +52,7 @@ componentDidMount=()=>{
             <div
               id="proheads"
               className="col-md-2 col-2 bg-primary text-center  rounded-2 text-white py-2 shadow"
-              onClick={()=>this.changeContentHandlerUpdate(1)}
+              onClick={()=>changeContentHandlerUpdate(1)}
             >
               {" "}
               Pending
@@ -63,7 +60,7 @@ componentDidMount=()=>{
             <div
               id="proheads"
               className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={()=>this.changeContentHandlerUpdate(2)}
+              onClick={()=>changeContentHandlerUpdate(2)}
             >
               {" "}
               All Request
@@ -71,7 +68,7 @@ componentDidMount=()=>{
             <div
               id="proheads"
               className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={()=>this.changeContentHandlerUpdate(3)}
+              onClick={()=>changeContentHandlerUpdate(3)}
             >
               {" "}
               Approved
@@ -79,7 +76,7 @@ componentDidMount=()=>{
             <div
               id="proheads"
               className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={()=>this.changeContentHandlerUpdate(4)}
+              onClick={()=>changeContentHandlerUpdate(4)}
             >
               {" "}
               Disapproved
@@ -87,7 +84,7 @@ componentDidMount=()=>{
             <div
               id="proheads"
               className="col-md-2 col-2 bg-primary text-center rounded-2 text-white py-2  shadow"
-              onClick={()=>this.changeContentHandlerUpdate(5)}
+              onClick={()=>changeContentHandlerUpdate(5)}
             >
               {" "}
               Spam
@@ -102,4 +99,4 @@ componentDidMount=()=>{
 
     );
   }
-}
+
